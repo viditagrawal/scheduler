@@ -91,6 +91,15 @@
       }
     },
     {
+      "identity" : "kvkcalendar",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kvyatkovskys/KVKCalendar.git",
+      "state" : {
+        "revision" : "f991c1a409667920eb08fabb35b02a8e98e65203",
+        "version" : "0.6.13"
+      }
+    },
+    {
       "identity" : "leveldb",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/leveldb.git",

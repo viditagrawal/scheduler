@@ -10,6 +10,7 @@
 		153BA26929F4399900C4FB6D /* EventDetailLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153BA26729F4399900C4FB6D /* EventDetailLauncher.swift */; };
 		153BA26A29F4399900C4FB6D /* CalendarViewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153BA26829F4399900C4FB6D /* CalendarViewControl.swift */; };
 		153BA26D29F439CE00C4FB6D /* ECWeekView in Frameworks */ = {isa = PBXBuildFile; productRef = 153BA26C29F439CE00C4FB6D /* ECWeekView */; };
+		15583C1C29F45D8D009C868D /* KVKCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 15583C1B29F45D8D009C868D /* KVKCalendar */; };
 		156DBAFA29F3E749009BC578 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156DBAF929F3E749009BC578 /* Course.swift */; };
 		2D00C52429F3A36D00EC9001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C52329F3A36D00EC9001 /* AppDelegate.swift */; };
 		2D00C52629F3A36D00EC9001 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C52529F3A36D00EC9001 /* SceneDelegate.swift */; };
@@ -88,6 +89,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D00C5A529F3CD1300EC9001 /* FirebaseFirestoreSwift in Frameworks */,
+				15583C1C29F45D8D009C868D /* KVKCalendar in Frameworks */,
 				2D00C5A129F3CD1300EC9001 /* FirebaseDatabaseSwift in Frameworks */,
 				2D00C5A329F3CD1300EC9001 /* FirebaseFirestore in Frameworks */,
 				2D00C59F29F3CD1300EC9001 /* FirebaseDatabase in Frameworks */,
@@ -215,6 +217,7 @@
 				2D00C5A429F3CD1300EC9001 /* FirebaseFirestoreSwift */,
 				2D00C5A629F3CD1300EC9001 /* FirebaseStorage */,
 				153BA26C29F439CE00C4FB6D /* ECWeekView */,
+				15583C1B29F45D8D009C868D /* KVKCalendar */,
 			);
 			productName = scheduler;
 			productReference = 2D00C52029F3A36D00EC9001 /* scheduler.app */;
@@ -291,6 +294,7 @@
 			packageReferences = (
 				2D00C59B29F3CD1200EC9001 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				153BA26B29F439CE00C4FB6D /* XCRemoteSwiftPackageReference "swift-week-view" */,
+				15583C1A29F45D8D009C868D /* XCRemoteSwiftPackageReference "KVKCalendar" */,
 			);
 			productRefGroup = 2D00C52129F3A36D00EC9001 /* Products */;
 			projectDirPath = "";
@@ -705,6 +709,14 @@
 				kind = branch;
 			};
 		};
+		15583C1A29F45D8D009C868D /* XCRemoteSwiftPackageReference "KVKCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kvyatkovskys/KVKCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.13;
+			};
+		};
 		2D00C59B29F3CD1200EC9001 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -720,6 +732,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 153BA26B29F439CE00C4FB6D /* XCRemoteSwiftPackageReference "swift-week-view" */;
 			productName = ECWeekView;
+		};
+		15583C1B29F45D8D009C868D /* KVKCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15583C1A29F45D8D009C868D /* XCRemoteSwiftPackageReference "KVKCalendar" */;
+			productName = KVKCalendar;
 		};
 		2D00C59C29F3CD1300EC9001 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
