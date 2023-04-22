@@ -181,8 +181,6 @@ class SignUpViewController: UIViewController {
                     courseDict[title]?.embedding = iEmbedding
                 }
         }
-    
->>>>>>> Stashed changes
 
     /*
     // MARK: - Navigation

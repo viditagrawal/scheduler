@@ -32,9 +32,8 @@
 		2D00C5B629F3D67D00EC9001 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C5B529F3D67D00EC9001 /* HomeViewController.swift */; };
 		2D00C5B729F3D67D00EC9001 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C5B529F3D67D00EC9001 /* HomeViewController.swift */; };
 		2D00C5B829F3D67D00EC9001 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C5B529F3D67D00EC9001 /* HomeViewController.swift */; };
-		2D00C5BA29F3D70F00EC9001 /* HomeSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C5B929F3D70F00EC9001 /* HomeSwiftUIView.swift */; };
-		2D00C5BB29F3D70F00EC9001 /* HomeSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C5B929F3D70F00EC9001 /* HomeSwiftUIView.swift */; };
-		2D00C5BC29F3D70F00EC9001 /* HomeSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C5B929F3D70F00EC9001 /* HomeSwiftUIView.swift */; };
+		2D00C5C029F3FCD500EC9001 /* ScheduleSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C5BF29F3FCD500EC9001 /* ScheduleSwiftUIView.swift */; };
+		2D00C5C229F3FD5700EC9001 /* FriendsSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C5C129F3FD5700EC9001 /* FriendsSwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +73,8 @@
 		2D00C59529F3C2A600EC9001 /* LoginSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSwiftUIView.swift; sourceTree = "<group>"; };
 		2D00C5B129F3D31600EC9001 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2D00C5B529F3D67D00EC9001 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		2D00C5B929F3D70F00EC9001 /* HomeSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSwiftUIView.swift; sourceTree = "<group>"; };
+		2D00C5BF29F3FCD500EC9001 /* ScheduleSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSwiftUIView.swift; sourceTree = "<group>"; };
+		2D00C5C129F3FD5700EC9001 /* FriendsSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsSwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +148,8 @@
 				2D00C53129F3A36F00EC9001 /* Info.plist */,
 				2D00C59529F3C2A600EC9001 /* LoginSwiftUIView.swift */,
 				2D00C55429F3B13D00EC9001 /* SignUpSwiftUIView.swift */,
-				2D00C5B929F3D70F00EC9001 /* HomeSwiftUIView.swift */,
+				2D00C5BF29F3FCD500EC9001 /* ScheduleSwiftUIView.swift */,
+				2D00C5C129F3FD5700EC9001 /* FriendsSwiftUIView.swift */,
 			);
 			path = scheduler;
 			sourceTree = "<group>";
@@ -327,11 +328,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D00C5C229F3FD5700EC9001 /* FriendsSwiftUIView.swift in Sources */,
 				2D00C52429F3A36D00EC9001 /* AppDelegate.swift in Sources */,
 				156DBAFA29F3E749009BC578 /* Course.swift in Sources */,
 				2D00C55529F3B13D00EC9001 /* SignUpSwiftUIView.swift in Sources */,
-				2D00C5BA29F3D70F00EC9001 /* HomeSwiftUIView.swift in Sources */,
 				2D00C59629F3C2A600EC9001 /* LoginSwiftUIView.swift in Sources */,
+				2D00C5C029F3FCD500EC9001 /* ScheduleSwiftUIView.swift in Sources */,
 				2D00C52629F3A36D00EC9001 /* SceneDelegate.swift in Sources */,
 				2D00C59429F3C1F400EC9001 /* LoginViewController.swift in Sources */,
 				2D00C5B629F3D67D00EC9001 /* HomeViewController.swift in Sources */,
@@ -345,7 +347,6 @@
 			files = (
 				2D00C53B29F3A36F00EC9001 /* schedulerTests.swift in Sources */,
 				2D00C5B729F3D67D00EC9001 /* HomeViewController.swift in Sources */,
-				2D00C5BB29F3D70F00EC9001 /* HomeSwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +356,6 @@
 			files = (
 				2D00C54729F3A36F00EC9001 /* schedulerUITestsLaunchTests.swift in Sources */,
 				2D00C54529F3A36F00EC9001 /* schedulerUITests.swift in Sources */,
-				2D00C5BC29F3D70F00EC9001 /* HomeSwiftUIView.swift in Sources */,
 				2D00C5B829F3D67D00EC9001 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
