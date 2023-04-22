@@ -87,7 +87,7 @@ struct Login: View{
             // Sign in button
             Button(action: {
                 print("hello")
-                //                    self.Verify()
+                self.Verify()
             }) {
                 Text("Sign in")
                     .foregroundColor(.white)
