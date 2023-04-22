@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		2D00C52429F3A36D00EC9001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C52329F3A36D00EC9001 /* AppDelegate.swift */; };
 		2D00C52629F3A36D00EC9001 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C52529F3A36D00EC9001 /* SceneDelegate.swift */; };
-		2D00C52829F3A36D00EC9001 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C52729F3A36D00EC9001 /* ViewController.swift */; };
 		2D00C52B29F3A36D00EC9001 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D00C52929F3A36D00EC9001 /* Main.storyboard */; };
 		2D00C52D29F3A36F00EC9001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D00C52C29F3A36F00EC9001 /* Assets.xcassets */; };
 		2D00C53029F3A36F00EC9001 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D00C52E29F3A36F00EC9001 /* LaunchScreen.storyboard */; };
 		2D00C53B29F3A36F00EC9001 /* schedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C53A29F3A36F00EC9001 /* schedulerTests.swift */; };
 		2D00C54529F3A36F00EC9001 /* schedulerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C54429F3A36F00EC9001 /* schedulerUITests.swift */; };
 		2D00C54729F3A36F00EC9001 /* schedulerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C54629F3A36F00EC9001 /* schedulerUITestsLaunchTests.swift */; };
+		2D00C55529F3B13D00EC9001 /* SignUpSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C55429F3B13D00EC9001 /* SignUpSwiftUIView.swift */; };
+		2D00C59229F3BBCB00EC9001 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C59129F3BBCB00EC9001 /* SignUpViewController.swift */; };
+		2D00C59429F3C1F400EC9001 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C59329F3C1F400EC9001 /* LoginViewController.swift */; };
+		2D00C59629F3C2A600EC9001 /* LoginSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C59529F3C2A600EC9001 /* LoginSwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,6 @@
 		2D00C52029F3A36D00EC9001 /* scheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D00C52329F3A36D00EC9001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D00C52529F3A36D00EC9001 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2D00C52729F3A36D00EC9001 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2D00C52A29F3A36D00EC9001 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2D00C52C29F3A36F00EC9001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D00C52F29F3A36F00EC9001 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		2D00C54029F3A36F00EC9001 /* schedulerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = schedulerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D00C54429F3A36F00EC9001 /* schedulerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = schedulerUITests.swift; sourceTree = "<group>"; };
 		2D00C54629F3A36F00EC9001 /* schedulerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = schedulerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2D00C55429F3B13D00EC9001 /* SignUpSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSwiftUIView.swift; sourceTree = "<group>"; };
+		2D00C59129F3BBCB00EC9001 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		2D00C59329F3C1F400EC9001 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2D00C59529F3C2A600EC9001 /* LoginSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +105,13 @@
 		2D00C52229F3A36D00EC9001 /* scheduler */ = {
 			isa = PBXGroup;
 			children = (
+				2D00C55329F3B11000EC9001 /* Screens */,
 				2D00C52329F3A36D00EC9001 /* AppDelegate.swift */,
 				2D00C52529F3A36D00EC9001 /* SceneDelegate.swift */,
-				2D00C52729F3A36D00EC9001 /* ViewController.swift */,
-				2D00C52929F3A36D00EC9001 /* Main.storyboard */,
 				2D00C52C29F3A36F00EC9001 /* Assets.xcassets */,
-				2D00C52E29F3A36F00EC9001 /* LaunchScreen.storyboard */,
 				2D00C53129F3A36F00EC9001 /* Info.plist */,
+				2D00C59529F3C2A600EC9001 /* LoginSwiftUIView.swift */,
+				2D00C55429F3B13D00EC9001 /* SignUpSwiftUIView.swift */,
 			);
 			path = scheduler;
 			sourceTree = "<group>";
@@ -125,6 +131,17 @@
 				2D00C54629F3A36F00EC9001 /* schedulerUITestsLaunchTests.swift */,
 			);
 			path = schedulerUITests;
+			sourceTree = "<group>";
+		};
+		2D00C55329F3B11000EC9001 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				2D00C52929F3A36D00EC9001 /* Main.storyboard */,
+				2D00C52E29F3A36F00EC9001 /* LaunchScreen.storyboard */,
+				2D00C59129F3BBCB00EC9001 /* SignUpViewController.swift */,
+				2D00C59329F3C1F400EC9001 /* LoginViewController.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +275,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D00C52829F3A36D00EC9001 /* ViewController.swift in Sources */,
 				2D00C52429F3A36D00EC9001 /* AppDelegate.swift in Sources */,
+				2D00C55529F3B13D00EC9001 /* SignUpSwiftUIView.swift in Sources */,
+				2D00C59629F3C2A600EC9001 /* LoginSwiftUIView.swift in Sources */,
 				2D00C52629F3A36D00EC9001 /* SceneDelegate.swift in Sources */,
+				2D00C59429F3C1F400EC9001 /* LoginViewController.swift in Sources */,
+				2D00C59229F3BBCB00EC9001 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
