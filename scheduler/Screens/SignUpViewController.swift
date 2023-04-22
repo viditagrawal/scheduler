@@ -75,7 +75,7 @@ class SignUpViewController: UIViewController {
                                     //print("Title: \(title)")
                                     //print("Description: \(description)")
                                     
-                                    var temp = Course(title: title, description: description, instructor: "", beginTime: "", endTime: "", unitsFixed: units, courseID: courseId, enrollCode: "", embedding: [])
+                                    var temp = Course(title: title, description: description, instructor: "", beginTime: "", endTime: "", unitsFixed: units, courseID: courseId.replacingOccurrences(of: " ", with: ""), enrollCode: "", embedding: [])
                                     
                                     
                                     if let classSections = classDict["classSections"] as? [[String: Any]] {
@@ -104,7 +104,7 @@ class SignUpViewController: UIViewController {
                                                     }
                                                 }
                                                 
-                                                self.courseDict[temp.enrollCode] = temp
+                                                self.courseDict[temp.courseID] = temp
                                                 
                                                 
                                                 
