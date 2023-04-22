@@ -32,17 +32,16 @@ struct CourseRecSwiftUIView: View {
                 // handle the input value here
                 let url = URL(string: "http://149.142.226.188:5000")!
                 var request = URLRequest(url: url)
-                let body = ["text": "\(text)"]
-                let bodyData = try? JSONSerialization.data(
-                    withJSONObject: body,
-                    options: []
-                )
+                let postString = "text=\(text)"
                 request.httpMethod = "POST"
-                request.httpBody = bodyData
+                request.httpBody = postString.data(using: String.Encoding.utf8)
                 
                 let session = URLSession.shared
                 let task = session.dataTask(with: request) { (data, response, error) in
-                    
+                    if let data = data, let dataString = String(data: data, encoding: .utf8)
+                    {
+                        print(dataString)
+                    }
                     if let error = error {
                         // Handle HTTP request error
                     } else if let data = data {
