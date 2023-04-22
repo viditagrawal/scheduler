@@ -13,12 +13,20 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let childView = UIHostingController(rootView: HomeSwiftUIView())
-        addChild(childView)
-        childView.view.frame = theContainer.bounds
-        theContainer.addSubview(childView.view)
-
-        // Do any additional setup after loading the view.
+        let scheduleView = UINavigationController(rootViewController: UIHostingController(rootView: ScheduleSwiftUIView()))
+            scheduleView.tabBarItem = UITabBarItem(title: "Schedule", image: nil, selectedImage: nil)
+            
+            let friendsView = UINavigationController(rootViewController: UIHostingController(rootView: FriendsSwiftUIView()))
+            friendsView.tabBarItem = UITabBarItem(title: "Friends", image: nil, selectedImage: nil)
+            
+            // Create the tab view
+            let tabView = UITabBarController()
+            tabView.viewControllers = [scheduleView, friendsView]
+            
+            // Set the tab view as the root view controller
+            UIApplication.shared.windows.first?.rootViewController = tabView
+            
+                
     }
     
 
