@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wdk-Js-2jT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L5C-yl-k4X">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -58,6 +59,69 @@
             </objects>
             <point key="canvasLocation" x="501.52671755725191" y="-703.52112676056345"/>
         </scene>
+<<<<<<< Updated upstream
+=======
+        <!--Home View Controller-->
+        <scene sceneID="Lxk-aT-t2o">
+            <objects>
+                <viewController storyboardIdentifier="HomeVC" id="yQf-gt-JGY" customClass="HomeViewController" customModule="scheduler" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="REt-WQ-HMp">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b6u-ER-pML">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Fki-ky-aU9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="theContainer" destination="b6u-ER-pML" id="zjU-Xd-mYK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oig-Nx-O55" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1307.6335877862596" y="-717.6056338028169"/>
+        </scene>
+        <!--Calendar View Controller-->
+        <scene sceneID="9we-4f-JNG">
+            <objects>
+                <viewController id="L5C-yl-k4X" customClass="CalendarViewController" customModule="scheduler" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vw6-Xu-uc2">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rh3-ca-vfn" customClass="ECWeekView" customModule="ECWeekView">
+                                <rect key="frame" x="16" y="44" width="361" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="visibleDays">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dfT-jq-znr"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rh3-ca-vfn" firstAttribute="leading" secondItem="vw6-Xu-uc2" secondAttribute="leadingMargin" id="6iJ-rO-sCX"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="rh3-ca-vfn" secondAttribute="bottom" constant="-44" id="9LI-Du-qO8"/>
+                            <constraint firstItem="rh3-ca-vfn" firstAttribute="top" secondItem="vw6-Xu-uc2" secondAttribute="topMargin" constant="-15" id="9aB-4M-9yn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rh3-ca-vfn" secondAttribute="trailing" id="ySM-Av-fOr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="weekView" destination="rh3-ca-vfn" id="YYh-kW-CnS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XOd-8a-o0A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2127" y="-689"/>
+        </scene>
+>>>>>>> Stashed changes
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
