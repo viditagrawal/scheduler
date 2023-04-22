@@ -16,5 +16,4 @@ struct Course : Decodable {
     var unitsFixed: Int
     var courseID: String
     var enrollCode: String
-    var embedding: [Double]
 }

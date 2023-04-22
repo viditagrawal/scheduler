@@ -7,7 +7,6 @@
 
 import SwiftUI
 import UIKit
-import FirebaseAuth
 
 struct LoginSwiftUIView: View {
     var body: some View {
@@ -87,7 +86,7 @@ struct Login: View{
             // Sign in button
             Button(action: {
                 print("hello")
-                self.Verify()
+                //                    self.Verify()
             }) {
                 Text("Sign in")
                     .foregroundColor(.white)
@@ -118,29 +117,6 @@ struct Login: View{
         }
         .padding(.horizontal, 25)
         
-    }
-    
-    func Verify(){
-        if self.email != "" && self.pass != ""{
-            Auth.auth().signIn(withEmail: self.email, password: self.pass) { (res, err) in
-
-                if err != nil{
-
-                    self.error = err!.localizedDescription
-                    self.title = "Login Error"
-                    self.alert.toggle()
-                    return
-                }
-
-                print("Login success!")
-                UserDefaults.standard.set(true, forKey: "status")
-                NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
-            }
-        }else{
-            self.title = "Login Error"
-            self.error = "Please fill all the content property"
-            self.alert = true
-        }
     }
 }
 
