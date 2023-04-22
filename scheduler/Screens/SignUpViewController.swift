@@ -182,8 +182,6 @@ class SignUpViewController: UIViewController {
                 }
         }
     
->>>>>>> Stashed changes
-
     /*
     // MARK: - Navigation
 
