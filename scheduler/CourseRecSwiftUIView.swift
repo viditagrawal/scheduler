@@ -88,6 +88,7 @@ struct CourseRecSwiftUIView: View {
 }
 
 
+
 //
 //var courseView = CourseRecSwiftUIView()
 //var observedArray: [String] = [] {
