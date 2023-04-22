@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		156DBAFA29F3E749009BC578 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156DBAF929F3E749009BC578 /* Course.swift */; };
 		2D00C52429F3A36D00EC9001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C52329F3A36D00EC9001 /* AppDelegate.swift */; };
 		2D00C52629F3A36D00EC9001 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C52529F3A36D00EC9001 /* SceneDelegate.swift */; };
 		2D00C52B29F3A36D00EC9001 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D00C52929F3A36D00EC9001 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		156DBAF929F3E749009BC578 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		2D00C52029F3A36D00EC9001 /* scheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D00C52329F3A36D00EC9001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D00C52529F3A36D00EC9001 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,9 +84,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		156DBAF829F3E73C009BC578 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				156DBAF929F3E749009BC578 /* Course.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		2D00C51729F3A36D00EC9001 = {
 			isa = PBXGroup;
 			children = (
+				156DBAF829F3E73C009BC578 /* Models */,
 				2D00C52229F3A36D00EC9001 /* scheduler */,
 				2D00C53929F3A36F00EC9001 /* schedulerTests */,
 				2D00C54329F3A36F00EC9001 /* schedulerUITests */,
@@ -276,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D00C52429F3A36D00EC9001 /* AppDelegate.swift in Sources */,
+				156DBAFA29F3E749009BC578 /* Course.swift in Sources */,
 				2D00C55529F3B13D00EC9001 /* SignUpSwiftUIView.swift in Sources */,
 				2D00C59629F3C2A600EC9001 /* LoginSwiftUIView.swift in Sources */,
 				2D00C52629F3A36D00EC9001 /* SceneDelegate.swift in Sources */,
