@@ -79,8 +79,6 @@ class SignUpViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-<<<<<<< Updated upstream
-=======
     var courseDict = [String : Course]()
         
         override func viewWillAppear(_ animated: Bool) {
