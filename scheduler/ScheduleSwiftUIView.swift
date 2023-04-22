@@ -15,6 +15,7 @@ struct ScheduleSwiftUIView: View {
     @State private var courseID = ""
     var body: some View {
         VStack {
+            CalendarView()
             Spacer()
             HStack {
                 Spacer()
