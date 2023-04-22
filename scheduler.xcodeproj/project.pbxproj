@@ -37,6 +37,7 @@
 		2D00C5B829F3D67D00EC9001 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C5B529F3D67D00EC9001 /* HomeViewController.swift */; };
 		2D00C5C029F3FCD500EC9001 /* ScheduleSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C5BF29F3FCD500EC9001 /* ScheduleSwiftUIView.swift */; };
 		2D00C5C229F3FD5700EC9001 /* FriendsSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C5C129F3FD5700EC9001 /* FriendsSwiftUIView.swift */; };
+		5E119E9929F4816100C7424C /* CourseRecSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E119E9829F4816100C7424C /* CourseRecSwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		2D00C5B529F3D67D00EC9001 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2D00C5BF29F3FCD500EC9001 /* ScheduleSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSwiftUIView.swift; sourceTree = "<group>"; };
 		2D00C5C129F3FD5700EC9001 /* FriendsSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsSwiftUIView.swift; sourceTree = "<group>"; };
+		5E119E9829F4816100C7424C /* CourseRecSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRecSwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				2D00C52529F3A36D00EC9001 /* SceneDelegate.swift */,
 				2D00C52C29F3A36F00EC9001 /* Assets.xcassets */,
 				2D00C53129F3A36F00EC9001 /* Info.plist */,
+				5E119E9829F4816100C7424C /* CourseRecSwiftUIView.swift */,
 				2D00C59529F3C2A600EC9001 /* LoginSwiftUIView.swift */,
 				2D00C55429F3B13D00EC9001 /* SignUpSwiftUIView.swift */,
 				2D00C5BF29F3FCD500EC9001 /* ScheduleSwiftUIView.swift */,
@@ -349,6 +352,7 @@
 				2D00C52629F3A36D00EC9001 /* SceneDelegate.swift in Sources */,
 				2D00C59429F3C1F400EC9001 /* LoginViewController.swift in Sources */,
 				2D00C5B629F3D67D00EC9001 /* HomeViewController.swift in Sources */,
+				5E119E9929F4816100C7424C /* CourseRecSwiftUIView.swift in Sources */,
 				2D00C59229F3BBCB00EC9001 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
