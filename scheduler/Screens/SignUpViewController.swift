@@ -22,6 +22,13 @@ let headers = [
   "authorization": "Bearer m41doASsy8NROlwnw6TXLIhH0dhXV8XQEaYvYKvk"
 ]
 
+struct Response: Decodable{
+    let id: String
+    let texts: String
+    let embeddings: String
+    let meta: String
+}
+var count = 0
 func getEmbedding(text: String) -> [Double]{
     var embedOutput: [Double] = []
     do {
@@ -44,17 +51,34 @@ func getEmbedding(text: String) -> [Double]{
             print(error as Any)
           } else {
             let httpResponse = response as? HTTPURLResponse
+              print("httpResponse: \(httpResponse)")
+                
             let stringResponse = String(data: data!, encoding: .utf8)
     //                      print(stringResponse?.split(separator: ":"))
-            var firstParse = stringResponse?.split(separator: ":")[3]
-            var embedding = firstParse?.split(separator:"[")[0].split(separator:"]")[0].split(separator: ",");
-            var embeddingArray: [Double] = []
-              print("EMBEDDING: \(embedding)")
-            for j in embedding!{
-                embeddingArray.append(Double(j)!)
+              if let data = stringResponse?.data(using: .utf8) {
+                  do {
+                      let json = try JSONSerialization.jsonObject(with: data, options: [])
+                      if let dict = json as? [String: Any] {
+                          // Access the values in the JSON object
+                          let id = dict["id"] as? String
+                          let texts = dict["texts"] as? [String]
+                          var embeddings = dict["embeddings"] as? [Double]
+                          let meta = dict["meta"] as? [String: Any]
+                          let apiVersion = meta?["api_version"] as? [String: Any]
+                          let version = apiVersion?["version"] as? String
+                          
+                          //print("JSON: \(json)")
+                          print("Title: \(text)")
+                          print("Embeddings: \(embeddings)")
+                          embedOutput = embeddings!
+                          print("embedOutput: \(embedOutput)")
+                      }
+                  } catch {
+                      print(error.localizedDescription)
+                  }
             }
-            print(embeddingArray)
-            embedOutput = embeddingArray
+            //print(embeddingArray)
+            //embedOutput = embeddingArray
           }
         })
 
@@ -168,21 +192,35 @@ class SignUpViewController: UIViewController {
                 task.resume()
             }
             sleep(3)
-            print("Count: \(self.courseDict.count)")
-            for (title, course) in self.courseDict{
-                print(title)
-            }
-            
+            //print("Count: \(self.courseDict.count)")
+            //for (title, course) in self.courseDict{
+            //    print(title)
+            //}
+            var dct: Dictionary<String, [Double]> = [:]
             var input = "I want to take a class about machine learning"
                 var inputEmbed: [Double] = getEmbedding(text: input)
-                for (title, course) in (courseDict){
-                    print(title)
+                var count = 0
+                for (code, course) in (courseDict){
+                    print(count)
+                    print(code)
                     var iEmbedding = getEmbedding(text: course.title + " " + course.description)
-                    courseDict[title]?.embedding = iEmbedding
+//                    if(iEmbedding != nil){count += 1}
+                    courseDict[code]?.embedding = iEmbedding
+                    print("This is embedding: \(iEmbedding)")
+                    dct.updateValue(iEmbedding, forKey: code)
+                    count += 1
+                    if(count == 99){
+                        print(dct)
+                        break
+                            sleep(60)
+                            count = 0
+                    }
                 }
+            
+            print("SFSD")
+            print(count)
         }
-    
->>>>>>> Stashed changes
+
 
     /*
     // MARK: - Navigation
