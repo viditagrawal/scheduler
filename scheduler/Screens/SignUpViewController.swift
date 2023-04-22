@@ -50,9 +50,9 @@ func getEmbedding(text: String) -> [Double]{
             var embedding = firstParse?.split(separator:"[")[0].split(separator:"]")[0].split(separator: ",");
             var embeddingArray: [Double] = []
               print("EMBEDDING: \(embedding)")
-            for j in embedding!{
-                embeddingArray.append(Double(j)!)
-            }
+//            for j in embedding!{
+//                embeddingArray.append(Double(j)!)
+//            }
             print(embeddingArray)
             embedOutput = embeddingArray
           }
