@@ -1,3 +1,10 @@
+//
+//  EventDetailLauncher.swift
+//  scheduler
+//
+//  Created by Collin Qian on 4/22/23.
+//
+
 import ECWeekView
 import Foundation
 import UIKit

@@ -9,6 +9,7 @@ import SwiftUI
 import FirebaseAuth
 import FirebaseCore
 import FirebaseFirestore
+import UIKit
 
 struct SignUpSwiftUIView: View {
     @State var email = ""
@@ -35,10 +36,13 @@ struct SignUpSwiftUIView: View {
         
         var body: some View{
             VStack{
-//                if self.status{
-//                    HomeScreen()
-//
-//                } else {
+                if self.status{
+                    NavigationView {
+                        NavigationLink(destination: MyHomeViewController()){ Text("continue")
+                            
+                        }
+                    }
+                } else {
                     VStack{
                         SignUp()
                     }
@@ -48,38 +52,7 @@ struct SignUpSwiftUIView: View {
                             self.status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
                         }
                     }
-//                }
-            }
-        }
-    }
-
-    struct HomeScreen: View{
-        var body: some View{
-            VStack{
-                
-                Image("currency").resizable().frame(width: 300.0, height: 225.0, alignment: .center)
-                
-                Text("Signed in successfully")
-                    .font(.title)
-                    .fontWeight(.bold)
-                
-                Button(action: {
-                    
-                    try! Auth.auth().signOut()
-                    UserDefaults.standard.set(false, forKey: "status")
-                    NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
-                    
-                }) {
-                    
-                    Text("Sign out")
-                        .foregroundColor(.white)
-                        .fontWeight(.bold)
-                        .padding(.vertical)
-                        .frame(width: UIScreen.main.bounds.width - 50)
                 }
-                .background(Color("Dominant"))
-                .cornerRadius(4)
-                .padding(.top, 25)
             }
         }
     }

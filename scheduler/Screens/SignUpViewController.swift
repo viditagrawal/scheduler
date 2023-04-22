@@ -7,6 +7,21 @@
 
 import UIKit
 import SwiftUI
+
+
+
+func calculateSimilarity(a: [Double], b: [Double]) -> Double {
+    let dotProduct = zip(a, b).reduce(0.0, { $0 + $1.0 * $1.1 })
+    let normProduct = (sqrt(a.map { $0 * $0 }.reduce(0.0, +)) * sqrt(b.map { $0 * $0 }.reduce(0.0, +)))
+    return dotProduct / normProduct
+}
+
+let headers = [
+  "accept": "application/json",
+  "content-type": "application/json",
+  "authorization": "Bearer m41doASsy8NROlwnw6TXLIhH0dhXV8XQEaYvYKvk"
+]
+
 class SignUpViewController: UIViewController {
     @IBOutlet weak var theContainer : UIView!
     
@@ -60,7 +75,7 @@ class SignUpViewController: UIViewController {
                                     //print("Title: \(title)")
                                     //print("Description: \(description)")
                                     
-                                    var temp = Course(title: title, description: description, instructor: "", beginTime: "", endTime: "", unitsFixed: units, courseID: courseId, enrollCode: "")
+                                    var temp = Course(title: title, description: description, instructor: "", beginTime: "", endTime: "", unitsFixed: units, courseID: courseId, enrollCode: "", embedding: [])
                                     
                                     
                                     if let classSections = classDict["classSections"] as? [[String: Any]] {
@@ -109,16 +124,12 @@ class SignUpViewController: UIViewController {
                 task.resume()
             }
             sleep(3)
-            print(self.courseDict.count)
+            print("Count: \(self.courseDict.count)")
             for (title, course) in self.courseDict{
                 print(title)
             }
         }
-    
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
     /*
     // MARK: - Navigation
 

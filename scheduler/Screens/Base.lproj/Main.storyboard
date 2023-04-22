@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C0m-M3-dmG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wdk-Js-2jT">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,7 +32,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gb-N7-0Aa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-379.38931297709922" y="-673.23943661971839"/>
+            <point key="canvasLocation" x="-387" y="-704"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="cDK-zf-eif">
@@ -59,8 +59,6 @@
             </objects>
             <point key="canvasLocation" x="501.52671755725191" y="-703.52112676056345"/>
         </scene>
-<<<<<<< Updated upstream
-=======
         <!--Home View Controller-->
         <scene sceneID="Lxk-aT-t2o">
             <objects>
@@ -87,14 +85,14 @@
             <point key="canvasLocation" x="1307.6335877862596" y="-717.6056338028169"/>
         </scene>
         <!--Calendar View Controller-->
-        <scene sceneID="b6C-Sz-dJb">
+        <scene sceneID="nzd-2y-vi3">
             <objects>
-                <viewController id="C0m-M3-dmG" userLabel="Calendar View Controller" customClass="CalendarViewController" customModule="scheduler" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="N4A-hl-sT2">
+                <viewController id="LDB-Oa-zJU" userLabel="Calendar View Controller" customClass="CalendarViewController" customModule="scheduler" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qm6-S0-Jgd">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZuJ-nx-u55" customClass="ECWeekView" customModule="ECWeekView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y9N-R5-pnR" customClass="ECWeekView" customModule="ECWeekView">
                                 <rect key="frame" x="16" y="44" width="361" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -104,25 +102,23 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="0O7-1m-JzA"/>
+                        <viewLayoutGuide key="safeArea" id="rva-Jq-A9h"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ZuJ-nx-u55" firstAttribute="leading" secondItem="N4A-hl-sT2" secondAttribute="leadingMargin" id="E7C-8I-7ki"/>
-                            <constraint firstItem="ZuJ-nx-u55" firstAttribute="top" secondItem="N4A-hl-sT2" secondAttribute="topMargin" constant="-15" id="HIg-fN-EMC"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="ZuJ-nx-u55" secondAttribute="bottom" constant="-44" id="cgA-qr-0Nt"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZuJ-nx-u55" secondAttribute="trailing" id="xiB-Es-w7T"/>
+                            <constraint firstItem="y9N-R5-pnR" firstAttribute="top" secondItem="qm6-S0-Jgd" secondAttribute="topMargin" constant="-15" id="RfS-mL-66m"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="y9N-R5-pnR" secondAttribute="bottom" constant="-44" id="Ttj-LA-4ZJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="y9N-R5-pnR" secondAttribute="trailing" id="xSE-6h-DpE"/>
+                            <constraint firstItem="y9N-R5-pnR" firstAttribute="leading" secondItem="qm6-S0-Jgd" secondAttribute="leadingMargin" id="yHD-zA-YlU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="weekView" destination="y9N-R5-pnR" id="72l-Qm-ADx"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hms-Rw-Dd7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rfG-r5-M8n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< Updated upstream
-            <point key="canvasLocation" x="2121" y="-718"/>
-=======
-            <point key="canvasLocation" x="2249.6183206106871" y="-704.22535211267609"/>
->>>>>>> Stashed changes
+            <point key="canvasLocation" x="2250" y="-704"/>
         </scene>
->>>>>>> Stashed changes
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

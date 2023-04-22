@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct ScheduleSwiftUIView: View {
+    @State private var newCourse = ""
+    @State private var presentAlert = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button("Add")
+        {
+            
+        }.alert("Title", isPresented: $presentAlert, actions: {
+            TextField("TextField", text: .constant("Value"))
+        })
     }
 }
 
