@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15126B1329F4236900DCF69E /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15126B1229F4236900DCF69E /* CalendarViewController.swift */; };
+		15126B1529F4239800DCF69E /* EventDetailLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15126B1429F4239800DCF69E /* EventDetailLauncher.swift */; };
+		15126B1829F424C700DCF69E /* ECWeekView in Frameworks */ = {isa = PBXBuildFile; productRef = 15126B1729F424C700DCF69E /* ECWeekView */; };
 		156DBAFA29F3E749009BC578 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156DBAF929F3E749009BC578 /* Course.swift */; };
 		2D00C52429F3A36D00EC9001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C52329F3A36D00EC9001 /* AppDelegate.swift */; };
 		2D00C52629F3A36D00EC9001 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C52529F3A36D00EC9001 /* SceneDelegate.swift */; };
@@ -40,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15126B1229F4236900DCF69E /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		15126B1429F4239800DCF69E /* EventDetailLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailLauncher.swift; sourceTree = "<group>"; };
 		156DBAF929F3E749009BC578 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		2D00C52029F3A36D00EC9001 /* scheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D00C52329F3A36D00EC9001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +69,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< Updated upstream
+=======
+				2D00C5A529F3CD1300EC9001 /* FirebaseFirestoreSwift in Frameworks */,
+				2D00C5A129F3CD1300EC9001 /* FirebaseDatabaseSwift in Frameworks */,
+				2D00C5A329F3CD1300EC9001 /* FirebaseFirestore in Frameworks */,
+				2D00C59F29F3CD1300EC9001 /* FirebaseDatabase in Frameworks */,
+				2D00C59D29F3CD1300EC9001 /* FirebaseAuth in Frameworks */,
+				2D00C5A729F3CD1300EC9001 /* FirebaseStorage in Frameworks */,
+				15126B1829F424C700DCF69E /* ECWeekView in Frameworks */,
+>>>>>>> Stashed changes
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +166,12 @@
 				2D00C52E29F3A36F00EC9001 /* LaunchScreen.storyboard */,
 				2D00C59129F3BBCB00EC9001 /* SignUpViewController.swift */,
 				2D00C59329F3C1F400EC9001 /* LoginViewController.swift */,
+<<<<<<< Updated upstream
+=======
+				2D00C5B529F3D67D00EC9001 /* HomeViewController.swift */,
+				15126B1229F4236900DCF69E /* CalendarViewController.swift */,
+				15126B1429F4239800DCF69E /* EventDetailLauncher.swift */,
+>>>>>>> Stashed changes
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -171,6 +192,18 @@
 			dependencies = (
 			);
 			name = scheduler;
+<<<<<<< Updated upstream
+=======
+			packageProductDependencies = (
+				2D00C59C29F3CD1300EC9001 /* FirebaseAuth */,
+				2D00C59E29F3CD1300EC9001 /* FirebaseDatabase */,
+				2D00C5A029F3CD1300EC9001 /* FirebaseDatabaseSwift */,
+				2D00C5A229F3CD1300EC9001 /* FirebaseFirestore */,
+				2D00C5A429F3CD1300EC9001 /* FirebaseFirestoreSwift */,
+				2D00C5A629F3CD1300EC9001 /* FirebaseStorage */,
+				15126B1729F424C700DCF69E /* ECWeekView */,
+			);
+>>>>>>> Stashed changes
 			productName = scheduler;
 			productReference = 2D00C52029F3A36D00EC9001 /* scheduler.app */;
 			productType = "com.apple.product-type.application";
@@ -243,6 +276,13 @@
 				Base,
 			);
 			mainGroup = 2D00C51729F3A36D00EC9001;
+<<<<<<< Updated upstream
+=======
+			packageReferences = (
+				2D00C59B29F3CD1200EC9001 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				15126B1629F424C600DCF69E /* XCRemoteSwiftPackageReference "swift-week-view" */,
+			);
+>>>>>>> Stashed changes
 			productRefGroup = 2D00C52129F3A36D00EC9001 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -286,9 +326,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15126B1329F4236900DCF69E /* CalendarViewController.swift in Sources */,
 				2D00C52429F3A36D00EC9001 /* AppDelegate.swift in Sources */,
 				156DBAFA29F3E749009BC578 /* Course.swift in Sources */,
 				2D00C55529F3B13D00EC9001 /* SignUpSwiftUIView.swift in Sources */,
+<<<<<<< Updated upstream
+=======
+				15126B1529F4239800DCF69E /* EventDetailLauncher.swift in Sources */,
+				2D00C5BA29F3D70F00EC9001 /* HomeSwiftUIView.swift in Sources */,
+>>>>>>> Stashed changes
 				2D00C59629F3C2A600EC9001 /* LoginSwiftUIView.swift in Sources */,
 				2D00C52629F3A36D00EC9001 /* SceneDelegate.swift in Sources */,
 				2D00C59429F3C1F400EC9001 /* LoginViewController.swift in Sources */,
@@ -634,6 +680,66 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+<<<<<<< Updated upstream
+=======
+
+/* Begin XCRemoteSwiftPackageReference section */
+		15126B1629F424C600DCF69E /* XCRemoteSwiftPackageReference "swift-week-view" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/EvanCooper9/swift-week-view";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		2D00C59B29F3CD1200EC9001 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		15126B1729F424C700DCF69E /* ECWeekView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15126B1629F424C600DCF69E /* XCRemoteSwiftPackageReference "swift-week-view" */;
+			productName = ECWeekView;
+		};
+		2D00C59C29F3CD1300EC9001 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D00C59B29F3CD1200EC9001 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		2D00C59E29F3CD1300EC9001 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D00C59B29F3CD1200EC9001 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		2D00C5A029F3CD1300EC9001 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D00C59B29F3CD1200EC9001 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		2D00C5A229F3CD1300EC9001 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D00C59B29F3CD1200EC9001 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		2D00C5A429F3CD1300EC9001 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D00C59B29F3CD1200EC9001 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		2D00C5A629F3CD1300EC9001 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D00C59B29F3CD1200EC9001 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
+>>>>>>> Stashed changes
 	};
 	rootObject = 2D00C51829F3A36D00EC9001 /* Project object */;
 }
