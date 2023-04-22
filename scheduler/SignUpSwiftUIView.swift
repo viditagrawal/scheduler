@@ -36,13 +36,13 @@ struct SignUpSwiftUIView: View {
         
         var body: some View{
             VStack{
-                if self.status{
-                    NavigationView {
-                        NavigationLink(destination: MyHomeViewController()){ Text("continue")
-                            
-                        }
-                    }
-                } else {
+//                if self.status{
+//                    NavigationView {
+//                        NavigationLink(destination: MyHomeViewController()){ Text("continue")
+//
+//                        }
+//                    }
+//                } else {
                     VStack{
                         SignUp()
                     }
@@ -53,7 +53,7 @@ struct SignUpSwiftUIView: View {
                         }
                     }
                 }
-            }
+//            }
         }
     }
 
@@ -213,6 +213,7 @@ struct SignUp: View{
         }
     }
     func Register(){
+        
         if self.email != ""
         {
             Auth.auth().createUser(withEmail: self.email, password: self.pass) { (res, err) in
@@ -228,20 +229,31 @@ struct SignUp: View{
                 
                 UserDefaults.standard.set(true, forKey: "status")
                 NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
+                signIn(email: self.email, password: self.pass, completion: {_ in 
+                    let db = Firestore.firestore()
+                    print("please")
+                    if let curruser = Auth.auth().currentUser{
+                        let uid = curruser.uid
+                        print(uid)
+                        db.collection("data").document(uid).setData([
+                            "perm": self.perm,
+                            "name": self.name,
+                            "email": self.email,
+                            "user" : self.user,
+                            "courses": []
+                        ]) { err in
+                            if let err = err {
+                                print("Error writing document: \(err)")
+                            } else {
+                                print("Document successfully written!")
+                            }
+                        }
+                    }
+                })
+                print(Auth.auth().currentUser?.uid)
             }
-            let db = Firestore.firestore()
-            print("please")
-            db.collection("data").document(self.user).setData([
-                "perm": self.perm,
-                "name": self.name,
-                "email": self.email
-            ]) { err in
-                if let err = err {
-                    print("Error writing document: \(err)")
-                } else {
-                    print("Document successfully written!")
-                }
-            }
+            
+            
             
         }
         else{
@@ -251,6 +263,16 @@ struct SignUp: View{
         }
 
     }}
+}
+
+func signIn(email: String, password: String, completion: @escaping (Result<AuthDataResult, Error>) -> Void) {
+    Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+        if let error = error {
+            completion(.failure(error))
+        } else if let result = result {
+            completion(.success(result))
+        }
+    }
 }
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
