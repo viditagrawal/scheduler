@@ -22,50 +22,6 @@ let headers = [
   "authorization": "Bearer m41doASsy8NROlwnw6TXLIhH0dhXV8XQEaYvYKvk"
 ]
 
-func getEmbedding(text: String) -> [Double]{
-    var embedOutput: [Double] = []
-    do {
-        let parameters = [
-            "texts": [text],
-          "truncate": "END"
-        ] as [String : Any]
-
-        let postData = try JSONSerialization.data(withJSONObject: parameters, options: [])
-        let request = NSMutableURLRequest(url: NSURL(string: "https://api.cohere.ai/v1/embed")! as URL,
-                                                cachePolicy: .useProtocolCachePolicy,
-                                            timeoutInterval: 10.0)
-        request.httpMethod = "POST"
-        request.allHTTPHeaderFields = headers
-        request.httpBody = postData as Data
-
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-          if (error != nil) {
-            print(error as Any)
-          } else {
-            let httpResponse = response as? HTTPURLResponse
-            let stringResponse = String(data: data!, encoding: .utf8)
-    //                      print(stringResponse?.split(separator: ":"))
-            var firstParse = stringResponse?.split(separator: ":")[3]
-            var embedding = firstParse?.split(separator:"[")[0].split(separator:"]")[0].split(separator: ",");
-            var embeddingArray: [Double] = []
-              print("EMBEDDING: \(embedding)")
-//            for j in embedding!{
-//                embeddingArray.append(Double(j)!)
-//            }
-            print(embeddingArray)
-            embedOutput = embeddingArray
-          }
-        })
-
-        dataTask.resume()
-    } catch{
-        print("did not do what i wanted")
-    }
-    return embedOutput
-}
-
-
 class SignUpViewController: UIViewController {
     @IBOutlet weak var theContainer : UIView!
     
@@ -172,14 +128,6 @@ class SignUpViewController: UIViewController {
             for (title, course) in self.courseDict{
                 print(title)
             }
-            
-            var input = "I want to take a class about machine learning"
-                var inputEmbed: [Double] = getEmbedding(text: input)
-                for (title, course) in (courseDict){
-                    print(title)
-                    var iEmbedding = getEmbedding(text: course.title + " " + course.description)
-                    courseDict[title]?.embedding = iEmbedding
-                }
         }
 
     /*
