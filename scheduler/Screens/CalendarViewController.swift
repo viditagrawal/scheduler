@@ -20,8 +20,14 @@ class CalendarViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+<<<<<<< Updated upstream:scheduler/Screens/CalendarViewController.swift
         weekView.dataSource=self
         weekView.delegate=self
+=======
+        weekView.dataSource = self
+        weekView.delegate = self
+        weekView.visibleDays = 5
+>>>>>>> Stashed changes:scheduler/Screens/CalendarViewControl.swift
     }
 }
 

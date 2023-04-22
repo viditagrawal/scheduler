@@ -116,7 +116,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hms-Rw-Dd7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< Updated upstream
             <point key="canvasLocation" x="2121" y="-718"/>
+=======
+            <point key="canvasLocation" x="2249.6183206106871" y="-704.22535211267609"/>
+>>>>>>> Stashed changes
         </scene>
 >>>>>>> Stashed changes
     </scenes>
