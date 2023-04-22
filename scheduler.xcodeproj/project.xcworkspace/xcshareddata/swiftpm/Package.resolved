@@ -19,6 +19,24 @@
       }
     },
     {
+      "identity" : "ectimelineview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/EvanCooper9/ECTimelineView",
+      "state" : {
+        "revision" : "9ff1f26167c5208ea3353a545a0b08ca7799dc57",
+        "version" : "1.2.0"
+      }
+    },
+    {
+      "identity" : "ecuicollectionviewmultidelegate",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/EvanCooper9/ECUICollectionViewMultiDelegate",
+      "state" : {
+        "revision" : "15dd90c5c2b1e92f0a8452326a1a0a3190f27134",
+        "version" : "0.1.2"
+      }
+    },
+    {
       "identity" : "firebase-ios-sdk",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/firebase-ios-sdk",
@@ -106,6 +124,24 @@
       "state" : {
         "revision" : "0af9125c4eae12a4973fb66574c53a54962a9e1e",
         "version" : "1.21.0"
+      }
+    },
+    {
+      "identity" : "swift-week-view",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/EvanCooper9/swift-week-view",
+      "state" : {
+        "branch" : "master",
+        "revision" : "f22e194020d36286fbaca7578d35e0ef3ed120ed"
+      }
+    },
+    {
+      "identity" : "swiftdate",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/malcommac/SwiftDate.git",
+      "state" : {
+        "revision" : "ed308a5afb97a3874300b761dad6e9966269e3e7",
+        "version" : "5.1.0"
       }
     }
   ],
