@@ -18,6 +18,10 @@
 		15583C2B29F48E9F009C868D /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15583C2A29F48E9F009C868D /* CalendarViewController.swift */; };
 		15583C2D29F49157009C868D /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = 15583C2C29F49157009C868D /* events.json */; };
 		156DBAFA29F3E749009BC578 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156DBAF929F3E749009BC578 /* Course.swift */; };
+		15CEF87029F56EC500CF8BD8 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15CEF86F29F56EC500CF8BD8 /* AuthenticationServices.framework */; };
+		15CEF87329F56EC500CF8BD8 /* AccountAuthenticationModificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CEF87229F56EC500CF8BD8 /* AccountAuthenticationModificationViewController.swift */; };
+		15CEF87629F56EC500CF8BD8 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15CEF87429F56EC500CF8BD8 /* MainInterface.storyboard */; };
+		15CEF87A29F56EC500CF8BD8 /* MinZ.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 15CEF86D29F56EC500CF8BD8 /* MinZ.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2D00C52429F3A36D00EC9001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C52329F3A36D00EC9001 /* AppDelegate.swift */; };
 		2D00C52629F3A36D00EC9001 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C52529F3A36D00EC9001 /* SceneDelegate.swift */; };
 		2D00C52B29F3A36D00EC9001 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D00C52929F3A36D00EC9001 /* Main.storyboard */; };
@@ -49,6 +53,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		15CEF87829F56EC500CF8BD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2D00C51829F3A36D00EC9001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 15CEF86C29F56EC500CF8BD8;
+			remoteInfo = MinZ;
+		};
 		2D00C53729F3A36F00EC9001 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2D00C51829F3A36D00EC9001 /* Project object */;
@@ -65,6 +76,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		15CEF87B29F56EC500CF8BD8 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				15CEF87A29F56EC500CF8BD8 /* MinZ.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		15583C1D29F48B61009C868D /* CalendarViewDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewDisplayable.swift; sourceTree = "<group>"; };
 		15583C1F29F48C17009C868D /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
@@ -75,6 +100,11 @@
 		15583C2A29F48E9F009C868D /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		15583C2C29F49157009C868D /* events.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = events.json; sourceTree = "<group>"; };
 		156DBAF929F3E749009BC578 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		15CEF86D29F56EC500CF8BD8 /* MinZ.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MinZ.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		15CEF86F29F56EC500CF8BD8 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		15CEF87229F56EC500CF8BD8 /* AccountAuthenticationModificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAuthenticationModificationViewController.swift; sourceTree = "<group>"; };
+		15CEF87529F56EC500CF8BD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		15CEF87729F56EC500CF8BD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D00C52029F3A36D00EC9001 /* scheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D00C52329F3A36D00EC9001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D00C52529F3A36D00EC9001 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +130,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		15CEF86A29F56EC500CF8BD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15CEF87029F56EC500CF8BD8 /* AuthenticationServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2D00C51D29F3A36D00EC9001 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -155,6 +193,24 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		15CEF86E29F56EC500CF8BD8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				15CEF86F29F56EC500CF8BD8 /* AuthenticationServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		15CEF87129F56EC500CF8BD8 /* MinZ */ = {
+			isa = PBXGroup;
+			children = (
+				15CEF87229F56EC500CF8BD8 /* AccountAuthenticationModificationViewController.swift */,
+				15CEF87429F56EC500CF8BD8 /* MainInterface.storyboard */,
+				15CEF87729F56EC500CF8BD8 /* Info.plist */,
+			);
+			path = MinZ;
+			sourceTree = "<group>";
+		};
 		2D00C51729F3A36D00EC9001 = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +219,8 @@
 				2D00C52229F3A36D00EC9001 /* scheduler */,
 				2D00C53929F3A36F00EC9001 /* schedulerTests */,
 				2D00C54329F3A36F00EC9001 /* schedulerUITests */,
+				15CEF87129F56EC500CF8BD8 /* MinZ */,
+				15CEF86E29F56EC500CF8BD8 /* Frameworks */,
 				2D00C52129F3A36D00EC9001 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -173,6 +231,7 @@
 				2D00C52029F3A36D00EC9001 /* scheduler.app */,
 				2D00C53629F3A36F00EC9001 /* schedulerTests.xctest */,
 				2D00C54029F3A36F00EC9001 /* schedulerUITests.xctest */,
+				15CEF86D29F56EC500CF8BD8 /* MinZ.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -236,6 +295,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		15CEF86C29F56EC500CF8BD8 /* MinZ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15CEF87E29F56EC500CF8BD8 /* Build configuration list for PBXNativeTarget "MinZ" */;
+			buildPhases = (
+				15CEF86929F56EC500CF8BD8 /* Sources */,
+				15CEF86A29F56EC500CF8BD8 /* Frameworks */,
+				15CEF86B29F56EC500CF8BD8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MinZ;
+			productName = MinZ;
+			productReference = 15CEF86D29F56EC500CF8BD8 /* MinZ.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		2D00C51F29F3A36D00EC9001 /* scheduler */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D00C54A29F3A36F00EC9001 /* Build configuration list for PBXNativeTarget "scheduler" */;
@@ -243,10 +319,12 @@
 				2D00C51C29F3A36D00EC9001 /* Sources */,
 				2D00C51D29F3A36D00EC9001 /* Frameworks */,
 				2D00C51E29F3A36D00EC9001 /* Resources */,
+				15CEF87B29F56EC500CF8BD8 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				15CEF87929F56EC500CF8BD8 /* PBXTargetDependency */,
 			);
 			name = scheduler;
 			packageProductDependencies = (
@@ -306,9 +384,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					15CEF86C29F56EC500CF8BD8 = {
+						CreatedOnToolsVersion = 14.3;
+					};
 					2D00C51F29F3A36D00EC9001 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -343,11 +424,20 @@
 				2D00C51F29F3A36D00EC9001 /* scheduler */,
 				2D00C53529F3A36F00EC9001 /* schedulerTests */,
 				2D00C53F29F3A36F00EC9001 /* schedulerUITests */,
+				15CEF86C29F56EC500CF8BD8 /* MinZ */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		15CEF86B29F56EC500CF8BD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15CEF87629F56EC500CF8BD8 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2D00C51E29F3A36D00EC9001 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -379,6 +469,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		15CEF86929F56EC500CF8BD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15CEF87329F56EC500CF8BD8 /* AccountAuthenticationModificationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2D00C51C29F3A36D00EC9001 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -427,6 +525,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		15CEF87929F56EC500CF8BD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 15CEF86C29F56EC500CF8BD8 /* MinZ */;
+			targetProxy = 15CEF87829F56EC500CF8BD8 /* PBXContainerItemProxy */;
+		};
 		2D00C53829F3A36F00EC9001 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2D00C51F29F3A36D00EC9001 /* scheduler */;
@@ -440,6 +543,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		15CEF87429F56EC500CF8BD8 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15CEF87529F56EC500CF8BD8 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		2D00C52929F3A36D00EC9001 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -459,6 +570,58 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		15CEF87C29F56EC500CF8BD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VQD7Y7A7US;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MinZ/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MinZ;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lahacks.scheduler.MinZ;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		15CEF87D29F56EC500CF8BD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VQD7Y7A7US;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MinZ/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MinZ;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lahacks.scheduler.MinZ;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		2D00C54829F3A36F00EC9001 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -576,6 +739,7 @@
 		2D00C54B29F3A36F00EC9001 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -605,6 +769,7 @@
 		2D00C54C29F3A36F00EC9001 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -710,6 +875,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		15CEF87E29F56EC500CF8BD8 /* Build configuration list for PBXNativeTarget "MinZ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15CEF87C29F56EC500CF8BD8 /* Debug */,
+				15CEF87D29F56EC500CF8BD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D00C51B29F3A36D00EC9001 /* Build configuration list for PBXProject "scheduler" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
