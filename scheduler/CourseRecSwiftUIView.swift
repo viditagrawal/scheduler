@@ -33,7 +33,7 @@ struct CourseRecSwiftUIView: View {
             Spacer(minLength: 1)
             TextField("Describe your interests", text: $text, onCommit: {
                             // handle the input value here
-                            let url = URL(string: "http://127.0.0.1:5000")!
+                            let url = URL(string: "http://149.142.226.188:5000")!
                             var request = URLRequest(url: url)
                             let postString = "text=\(text)"
                             request.httpMethod = "POST"
