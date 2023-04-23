@@ -96,8 +96,8 @@ extension KVKCalendarSettings where Self: KVKCalendarDataModel {
             
             let uid = curruser.uid
             //let uid = "PeT7yg3UqCRbf3CkjoAJoFv0l8z2"
-            print(myUID)
-            print(uid)
+            print("myUID: ", myUID)
+            print("uid: ", uid)
             if (myUID == "") {
                 myUID = uid
             }
