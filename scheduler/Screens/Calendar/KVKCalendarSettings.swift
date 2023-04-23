@@ -89,12 +89,12 @@ extension KVKCalendarSettings where Self: KVKCalendarDataModel {
     
     
     
-    func loadEvents(dateFormat: String, completion: ([Event]) -> Void) {
+    func loadEvents(uid: String, dateFormat: String, completion: ([Event]) -> Void) {
         let decoder = JSONDecoder()
         var courses : Set<String> = []
         if let curruser = Auth.auth().currentUser {
-            //let uid = curruser.uid
-            let uid = "PeT7yg3UqCRbf3CkjoAJoFv0l8z2"
+            let uid = curruser.uid
+            //let uid = "PeT7yg3UqCRbf3CkjoAJoFv0l8z2"
             let db = Firestore.firestore()
             let currData = db.collection("data").document(uid)
             
@@ -222,8 +222,8 @@ extension KVKCalendarSettings where Self: KVKCalendarDataModel {
                                 newEvent.start = times
                                 newEvent.end = endtime!
                                 newEvent.data = courseDict[i]!.title
-                                newEvent.textColor = UIColor(.white)
-                                newEvent.backgroundColor = UIColor(.red)
+                                newEvent.textColor = UIColor(.black)
+                                newEvent.backgroundColor = UIColor(.green)
                                 newEvent.title = TextEvent(timeline: "\(courseDict[i]!.beginTime) - \(courseDict[i]!.endTime)\n\(courseDict[i]!.title)",
                                                         month: "\(courseDict[i]!.title) \(courseDict[i]!.beginTime)",
                                                         list: "\(courseDict[i]!.beginTime) - \(courseDict[i]!.endTime) \(courseDict[i]!.title)")
