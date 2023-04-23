@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let scheduleView = UINavigationController(rootViewController: UIHostingController(rootView: ScheduleSwiftUIView()))
+            let scheduleView = UINavigationController(rootViewController: UIHostingController(rootView: ScheduleSwiftUIView()))
         scheduleView.tabBarItem = UITabBarItem(title: "Schedule", image: UIImage(systemName: "calendar"), selectedImage: nil)
             let courseRecView = UINavigationController(rootViewController: UIHostingController(rootView: CourseRecSwiftUIView()))
             courseRecView.tabBarItem = UITabBarItem(title: "Course Search", image: UIImage(systemName: "book"), selectedImage: nil)
@@ -25,6 +25,7 @@ class HomeViewController: UIViewController {
             let friendRecView = UINavigationController(rootViewController: UIHostingController(rootView: FriendRecSwiftUIView()))
             friendRecView.tabBarItem = UITabBarItem(title: "Friends Rec", image: UIImage(systemName: "mail"), selectedImage: nil)
             
+       
             // Create the tab view
             let tabView = UITabBarController()
             tabView.viewControllers = [scheduleView, courseRecView, friendsView, friendRecView]

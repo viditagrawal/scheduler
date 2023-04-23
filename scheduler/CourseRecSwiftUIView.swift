@@ -18,120 +18,142 @@ struct ContentView: View { //p sure this whole class does nothing
     }
 }
 
-
 struct CourseRecSwiftUIView: View {
     @State private var text = ""
     
     @State var queriedYet = false
     @State var courses = ["", "", "", "", ""]
+    
+    
     var body: some View {
-        VStack {
-            Text("Course Finder")
-                .fontWeight(.bold)
-                .padding()
-                .font(Font.custom("GT-Walsheim-Pro-Trial-Medium", size: 35))
-            Spacer(minLength: 1)
-            TextField("Describe your interests", text: $text, onCommit: {
-                            // handle the input value here
-                            let url = URL(string: "http://149.142.226.188:5000")!
-                            var request = URLRequest(url: url)
-                            let postString = "text=\(text)"
-                            request.httpMethod = "POST"
-                            request.httpBody = postString.data(using: String.Encoding.utf8)
-                            
-                            let session = URLSession.shared
-                            let task = session.dataTask(with: request) { (data, response, error) in
-                                if let data = data, let dataString = String(data: data, encoding: .utf8)
-                                {
-                                    //print(type(of:dataString))
-                                    if let jsonData = dataString.data(using: .utf8){
-                                    let json = try! JSONSerialization.jsonObject(with: jsonData, options: [.allowFragments]) as![String:String]
-                                    print("Json: ",json)
-                                    let sortedKeys = Array(json.keys).sorted(by: >)
-                                    print("SortedKeys: ",sortedKeys)
-                                    var result = [String]()
-                                    for key in sortedKeys
+        ZStack{
+            BackgroundView()
+            VStack {
+                
+                
+                Text("Course Finder")
+                    .fontWeight(.bold)
+                    .padding()
+                    .font(Font.custom("GT-Walsheim-Pro-Trial-Medium", size: 35))
+                Spacer(minLength: 1)
+                TextField("Describe your interests", text: $text, onCommit: {
+                                // handle the input value here
+                                let url = URL(string: "http://149.142.226.188:5000")!
+                                var request = URLRequest(url: url)
+                                let postString = "text=\(text)"
+                                request.httpMethod = "POST"
+                                request.httpBody = postString.data(using: String.Encoding.utf8)
+                                
+                                let session = URLSession.shared
+                                let task = session.dataTask(with: request) { (data, response, error) in
+                                    if let data = data, let dataString = String(data: data, encoding: .utf8)
                                     {
-                                        print(courseDict[json[key]!]?.description)
-//                                        print(c)
-                                        do{
-                                            var description = courseDict[json[key]!]?.description
-                                            try result.append((json[key]! ?? "") + ": " + (description ?? "No Description") )
-                                        }
-                                        catch{
-                                            result.append(json[key] ?? "")
-                                        }
-                                        
+                                        //print(type(of:dataString))
+                                        if let jsonData = dataString.data(using: .utf8){
+                                        let json = try! JSONSerialization.jsonObject(with: jsonData, options: [.allowFragments]) as![String:String]
+                                        print("Json: ",json)
+                                        let sortedKeys = Array(json.keys).sorted(by: >)
+                                        print("SortedKeys: ",sortedKeys)
+                                        var result = [String]()
+                                        for key in sortedKeys
+                                        {
+                                            print(courseDict[json[key]!]?.description)
+    //                                        print(c)
+                                            do{
+                                                var description = courseDict[json[key]!]?.description
+                                                try result.append((json[key]! ?? "") + ": " + (description ?? "No Description") )
+                                            }
+                                            catch{
+                                                result.append(json[key] ?? "")
+                                            }
                                             
-                                        
-                                    }
-                                    self.courses = result
-                                    self.queriedYet = true
-                                    print(courses)
+                                                
+                                            
+                                        }
+                                        self.courses = result
+                                        self.queriedYet = true
+                                        print(courses)
+                            }
+                            if let error = error {
+                                // Handle HTTP request error
+                            } else if data != nil {
+                                // Handle HTTP request response
+                            } else {
+                                // Handle unexpected error
+                            }
                         }
-                        if let error = error {
-                            // Handle HTTP request error
-                        } else if data != nil {
-                            // Handle HTTP request response
-                        } else {
-                            // Handle unexpected error
-                        }
+                        
+                        
                     }
-                    
-                    
+                    task.resume()
+                    })
+                    .padding(.horizontal, 5)
+                .frame(width: CGFloat(300), height: CGFloat(50))
+                .cornerRadius(10)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1)
+                )
+                .shadow(radius: 2)
+                Spacer(minLength: 75)
+                ScrollView{
+                    Text(courses[0])
+                        .padding()
+                        .cornerRadius(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10).stroke(Color.green, lineWidth: 1)
+                        )
+                    Spacer(minLength: 25)
+                    Text(courses[1])
+                        .padding()
+                        .cornerRadius(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10).stroke(Color.green, lineWidth: 1)
+                        )
+                    Spacer(minLength: 25)
+                    Text(courses[2])
+                        .padding()
+                        .cornerRadius(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10).stroke(Color.green, lineWidth: 1)
+                        )
+                    Spacer(minLength: 25)
+                    Text(courses[3])
+                        .padding()
+                        .cornerRadius(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10).stroke(Color.green, lineWidth: 1)
+                        )
+                    Spacer(minLength: 25)
+                    Text(courses[4])
+                        .padding()
+                        .cornerRadius(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10).stroke(Color.green, lineWidth: 1)
+                        )
                 }
-                task.resume()
-                })
-                .padding(.horizontal, 5)
-            .frame(width: CGFloat(300), height: CGFloat(50))
-            .cornerRadius(10)
-            .overlay(
-                RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1)
-            )
-            .shadow(radius: 2)
-            Spacer(minLength: 75)
-            ScrollView{
-                Text(courses[0])
-                    .padding()
-                    .cornerRadius(10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10).stroke(Color.green, lineWidth: 1)
-                    )
-                Spacer(minLength: 25)
-                Text(courses[1])
-                    .padding()
-                    .cornerRadius(10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10).stroke(Color.green, lineWidth: 1)
-                    )
-                Spacer(minLength: 25)
-                Text(courses[2])
-                    .padding()
-                    .cornerRadius(10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10).stroke(Color.green, lineWidth: 1)
-                    )
-                Spacer(minLength: 25)
-                Text(courses[3])
-                    .padding()
-                    .cornerRadius(10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10).stroke(Color.green, lineWidth: 1)
-                    )
-                Spacer(minLength: 25)
-                Text(courses[4])
-                    .padding()
-                    .cornerRadius(10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10).stroke(Color.green, lineWidth: 1)
-                    )
+                .opacity(queriedYet ? 1 : 0)
+                .frame(width: CGFloat(300), height: CGFloat(525))
+                Spacer(minLength: 50) //was 600
             }
-            .opacity(queriedYet ? 1 : 0)
-            .frame(width: CGFloat(300), height: CGFloat(525))
-            Spacer(minLength: 50) //was 600
+            
         }
         
+       
         
+    }
+    
+}
+
+
+struct BackgroundView: View {
+    var body: some View {
+        ZStack {
+            Image("LeafLogo")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .edgesIgnoringSafeArea(.all).opacity(0.2)
+            // Add your other UI elements here
+        }
     }
 }
 
