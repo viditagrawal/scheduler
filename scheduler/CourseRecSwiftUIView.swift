@@ -8,21 +8,22 @@
 import Foundation
 import SwiftUI
 
-
-struct ContentView: View {
+struct ContentView: View { //p sure this whole class does nothing
     @State private var text = ""
 
     var body: some View {
-        TextField("Enter text here", text: $text)
+        TextField("", text: $text)
             .padding()
             .border(Color.gray)
     }
 }
 
-var courses : [String] = []
 
 struct CourseRecSwiftUIView: View {
     @State private var text = ""
+    
+    @State var queriedYet = false
+    @State var courses = ["", "", "", "", ""]
     var body: some View {
         VStack {
             Text("NLP Course Search")
@@ -30,31 +31,32 @@ struct CourseRecSwiftUIView: View {
                 .padding()
                 .font(Font.custom("Helvetica", size: 35))
             Spacer(minLength: 1)
-            TextField("Enter text here", text: $text, onCommit: {
-                // handle the input value here
-                let url = URL(string: "http://149.142.226.188:5000")!
-                var request = URLRequest(url: url)
-                let postString = "text=\(text)"
-                request.httpMethod = "POST"
-                request.httpBody = postString.data(using: String.Encoding.utf8)
-                
-                let session = URLSession.shared
-                let task = session.dataTask(with: request) { (data, response, error) in
-                    if let data = data, let dataString = String(data: data, encoding: .utf8)
-                    {
-                        //print(type(of:dataString))
-                        if let jsonData = dataString.data(using: .utf8){
+            TextField("Describe your interests", text: $text, onCommit: {
+                            // handle the input value here
+                            let url = URL(string: "http://127.0.0.1:5000")!
+                            var request = URLRequest(url: url)
+                            let postString = "text=\(text)"
+                            request.httpMethod = "POST"
+                            request.httpBody = postString.data(using: String.Encoding.utf8)
                             
-                            let json = try! JSONSerialization.jsonObject(with: jsonData, options: [.allowFragments]) as! [String: String]
-                            
-                            // extract the non-decimal values into an array
-                            var result = [String]()
-                            for (_, value) in json {
-                                print(value)
-                                result.append(value)
-                            }
-                            print(dataString)
-                            print(result)
+                            let session = URLSession.shared
+                            let task = session.dataTask(with: request) { (data, response, error) in
+                                if let data = data, let dataString = String(data: data, encoding: .utf8)
+                                {
+                                    //print(type(of:dataString))
+                                    if let jsonData = dataString.data(using: .utf8){
+                                    let json = try! JSONSerialization.jsonObject(with: jsonData, options: [.allowFragments]) as![String:String]
+                                    print(json)
+                                    let sortedKeys = Array(json.keys).sorted(by: >)
+                                    print(sortedKeys)
+                                    var result = [String]()
+                                    for key in sortedKeys
+                                    {
+                                        result.append(json[key] ?? "" + courseDict[key])
+                                    }
+                                    self.courses = result
+                                    self.queriedYet = true
+                                    print(courses)
                         }
                         if let error = error {
                             // Handle HTTP request error
@@ -68,19 +70,54 @@ struct CourseRecSwiftUIView: View {
                     
                 }
                 task.resume()
-                
                 })
-            .padding(.horizontal, 5)
+                .padding(.horizontal, 5)
             .frame(width: CGFloat(300), height: CGFloat(50))
             .cornerRadius(10)
             .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.gray, lineWidth: 1)
+                RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1)
             )
             .shadow(radius: 2)
-            Spacer(minLength: 50)
-            
-            Spacer(minLength: 600)
+            Spacer(minLength: 75)
+            ScrollView{
+                Text(courses[0])
+                    .padding()
+                    .cornerRadius(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10).stroke(Color.green, lineWidth: 1)
+                    )
+                Spacer(minLength: 25)
+                Text(courses[1])
+                    .padding()
+                    .cornerRadius(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10).stroke(Color.green, lineWidth: 1)
+                    )
+                Spacer(minLength: 25)
+                Text(courses[2])
+                    .padding()
+                    .cornerRadius(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10).stroke(Color.green, lineWidth: 1)
+                    )
+                Spacer(minLength: 25)
+                Text(courses[3])
+                    .padding()
+                    .cornerRadius(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10).stroke(Color.green, lineWidth: 1)
+                    )
+                Spacer(minLength: 25)
+                Text(courses[4])
+                    .padding()
+                    .cornerRadius(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10).stroke(Color.green, lineWidth: 1)
+                    )
+            }
+            .opacity(queriedYet ? 1 : 0)
+            .frame(width: CGFloat(300), height: CGFloat(525))
+            Spacer(minLength: 50) //was 600
         }
         
         
