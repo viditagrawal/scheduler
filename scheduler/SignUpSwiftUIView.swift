@@ -108,13 +108,13 @@ struct SignUp: View{
                 GeometryReader{_ in
                     
                     VStack{
-                        Image("Group 4").resizable().frame(width: 300.0, height: 155.0, alignment: .center)
+                        Image("minzLogo").frame(width: 300, height: 155, alignment: .center).aspectRatio(contentMode: .fit)     
                         
                         Text("Sign up a new account")
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(self.color)
-                            .padding(.top, 15)
+                            .padding(.top, 0)
                         
                         TextField("Full Name",text:self.$name)
                             .autocapitalization(.none)

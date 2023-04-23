@@ -37,7 +37,7 @@ struct Login: View{
     
     var body: some View{
         VStack(){
-            Image("finance_app").resizable().frame(width: 300.0, height: 255.0, alignment: .top)
+            Image("LeafLogo").frame(width: 300.0, height: 300.0, alignment: .top)
             
             Text("Sign in to your account")
                 .font(Font.custom("GT-Walsheim-Pro-Trial-Condensed-Regular", size: 28))
@@ -73,7 +73,7 @@ struct Login: View{
             .padding()
             .background(RoundedRectangle(cornerRadius: 6)
                 .stroke(borderColor,lineWidth: 2))
-            .padding(.top, 10)
+            .padding(.top, 5)
             
             HStack{
                 Spacer()
