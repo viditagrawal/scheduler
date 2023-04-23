@@ -21,7 +21,6 @@ let headers = [
   "content-type": "application/json",
   "authorization": "Bearer m41doASsy8NROlwnw6TXLIhH0dhXV8XQEaYvYKvk"
 ]
-
 public var courseDict = [String : Course]()
 
 class SignUpViewController: UIViewController {
@@ -36,6 +35,8 @@ class SignUpViewController: UIViewController {
         theContainer.addSubview(childView.view)
         // Do any additional setup after loading the view.
     }
+    
+    
         
     override func viewWillAppear(_ animated: Bool) {
         
