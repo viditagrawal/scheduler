@@ -33,7 +33,7 @@ struct FriendRecSwiftUIView: View {
                     
                 }
                 
-            }.navigationBarTitle("Friends")
+            }.navigationBarTitle("Friends").font(Font.custom("GT-Walsheim-Pro-Trial-Condensed-Regular", size: 16))
             
             
             Text("hello")
@@ -66,7 +66,7 @@ struct FriendRow: View {
                         }) {
                             ZStack{
                                 RoundedRectangle(cornerRadius: 5).frame(height: 35).foregroundColor(.blue)
-                                Text("Add friend").font(.system(size:13)).foregroundColor(.white)
+                                Text("Add friend").font(Font.custom("GT-Walsheim-Pro-Trial-Condensed-Regular", size: 13)).foregroundColor(.white)
                             }
                             
                         }
@@ -75,7 +75,7 @@ struct FriendRow: View {
                         }) {
                             ZStack{
                                 RoundedRectangle(cornerRadius: 5).frame(height: 35).foregroundColor(.gray)
-                                Text("Remove").font(.system(size:13)).foregroundColor(.white)
+                                Text("Remove").font(Font.custom("GT-Walsheim-Pro-Trial-Condensed-Regular", size: 13)).foregroundColor(.white)
                             }
                         }
                         Spacer(minLength: 150)

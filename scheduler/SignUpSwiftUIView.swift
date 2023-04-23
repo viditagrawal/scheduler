@@ -44,6 +44,7 @@ struct SignUpSwiftUIView: View {
 //                    }
 //                } else {
                     VStack{
+                        
                         SignUp()
                     }
                      .onAppear{
@@ -118,14 +119,14 @@ struct SignUp: View{
                             .autocapitalization(.none)
                             .padding()
                             .background(RoundedRectangle(cornerRadius:6).stroke(self.borderColor,lineWidth:2))
-                            .padding(.top, 0)
+                            .padding(.top, 4)
                         
                         TextField("Username",text:self.$user)
                             .autocorrectionDisabled()
                             .autocapitalization(.none)
                             .padding()
                             .background(RoundedRectangle(cornerRadius:6).stroke(self.borderColor,lineWidth:2))
-                            .padding(.top, 0)
+                            .padding(.top, 10)
                         
                         TextField("Email",text:self.$email)
                         .autocapitalization(.none)
@@ -307,3 +308,4 @@ struct MyHomeViewController : UIViewControllerRepresentable {
 
 
     
+

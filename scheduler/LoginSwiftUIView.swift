@@ -11,7 +11,9 @@ import FirebaseAuth
 
 struct LoginSwiftUIView: View {
     var body: some View {
-        Login()
+//        Login()
+        Image("minz")
+        
     }
 }
 
@@ -37,7 +39,7 @@ struct Login: View{
             Image("finance_app").resizable().frame(width: 300.0, height: 255.0, alignment: .top)
             
             Text("Sign in to your account")
-                .font(.title)
+                .font(Font.custom("GT-Walsheim-Pro-Trial-Condensed-Regular", size: 28))
                 .fontWeight(.bold)
                 .padding(.top, 15)
             
@@ -45,16 +47,16 @@ struct Login: View{
                 .autocapitalization(.none)
                 .padding()
                 .background(RoundedRectangle(cornerRadius:6).stroke(borderColor,lineWidth:2))
-                .padding(.top, 0)
+                .padding(.top, 0).font(Font.custom("GT-Walsheim-Pro-Trial-Condensed-Regular", size: 16))
             
             HStack(spacing: 15){
                 VStack{
                     if self.visible {
                         TextField("Password", text: self.$pass)
-                            .autocapitalization(.none)
+                            .autocapitalization(.none).font(Font.custom("GT-Walsheim-Pro-Trial-Condensed-Regular", size: 16))
                     } else {
                         SecureField("Password", text: self.$pass)
-                            .autocapitalization(.none)
+                            .autocapitalization(.none).font(Font.custom("GT-Walsheim-Pro-Trial-Condensed-Regular", size: 16))
                     }
                 }
                 
@@ -81,7 +83,7 @@ struct Login: View{
                     Text("Forget Password")
                         .fontWeight(.medium)
                         .foregroundColor(Color("Dominant"))
-                }.padding(.top, 10.0)
+                }.padding(.top, 10.0).font(Font.custom("GT-Walsheim-Pro-Trial-Condensed-Regular", size: 10))
             }
             
             // Sign in button

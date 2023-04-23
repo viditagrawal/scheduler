@@ -18,19 +18,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hwu-l9-0Pt">
-                                <rect key="frame" x="0.0" y="122" width="377" height="705"/>
+                                <rect key="frame" x="0.0" y="42" width="377" height="785"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Group 4 [MConverter.eu].gif" translatesAutoresizingMaskIntoConstraints="NO" id="teu-ei-eRZ">
+                                        <rect key="frame" x="73" y="25" width="231" height="85"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p48-Ch-olV">
-                                <rect key="frame" x="159" y="59" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <segue destination="yQf-gt-JGY" kind="show" id="uYR-Yh-SBn"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="caN-zf-K90"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -73,7 +70,7 @@
             <objects>
                 <viewController storyboardIdentifier="HomeVC" id="yQf-gt-JGY" customClass="HomeViewController" customModule="scheduler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="REt-WQ-HMp">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b6u-ER-pML" customClass="CalendarView" customModule="KVKCalendar">
@@ -96,6 +93,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Group 4 [MConverter.eu].gif" width="474" height="180"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

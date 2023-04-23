@@ -26,10 +26,10 @@ struct CourseRecSwiftUIView: View {
     @State var courses = ["", "", "", "", ""]
     var body: some View {
         VStack {
-            Text("NLP Course Search")
+            Text("Course Finder")
                 .fontWeight(.bold)
                 .padding()
-                .font(Font.custom("Helvetica", size: 35))
+                .font(Font.custom("GT-Walsheim-Pro-Trial-Medium", size: 35))
             Spacer(minLength: 1)
             TextField("Describe your interests", text: $text, onCommit: {
                             // handle the input value here

@@ -7,11 +7,12 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 final class EventViewer: UIView {
     private let textLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 19)
+        label.font = UIFont(name: "GT-Walsheim-Pro-Trial-Condensed-Regular", size: 19)
         label.textAlignment = .center
         label.numberOfLines = 1
         label.text = "Select event to view the description"

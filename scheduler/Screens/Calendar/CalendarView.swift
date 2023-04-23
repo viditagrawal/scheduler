@@ -54,7 +54,7 @@ struct CalendarView: View {
                         updatedDate = Date()
                     } label: {
                         Text("Today")
-                            .font(.headline)
+                            .font(Font.custom("GT-Walsheim-Pro-Trial-Medium", size: 20))
                             .foregroundColor(.blue)
                     }
                 }
