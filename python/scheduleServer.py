@@ -60,6 +60,7 @@ def hello():
 
 @app.route("/friends", methods = ['POST'])
 def friends_endpoint():
+    print(request)
     print("here")
     print(request.data)
     data = request.get_json()

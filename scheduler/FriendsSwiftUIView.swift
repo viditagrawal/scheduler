@@ -42,8 +42,26 @@ func gettingUsers(completion: @escaping ([String]?, Error?) -> Void) {
         docref.getDocument { (document, error) in
             if let document = document, document.exists {
                 let data = document.data()
-                if let friends = data?["friends"] as? [String] {
-                    completion(friends, nil)
+                if let friendUIDs = data?["friends"] as? [String] {
+                    var friends: [String] = []
+                    let group = DispatchGroup()
+                    for uid in friendUIDs {
+                        group.enter()
+                        let friendRef = db.collection("data").document(uid)
+                        friendRef.getDocument { (friendDocument, friendError) in
+                            if let friendDocument = friendDocument, friendDocument.exists {
+                                let friendData = friendDocument.data()
+                                if let username = friendData?["user"] as? String {
+                                    friends.append(username)
+                                    print("friends\(friends)")
+                                }
+                            }
+                            group.leave()
+                        }
+                    }
+                    group.notify(queue: .main) {
+                        completion(friends, nil)
+                    }
                 } else {
                     completion(nil, nil)
                 }
