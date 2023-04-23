@@ -14,8 +14,8 @@
             filePath = "scheduler/Screens/Calendar/KVKCalendarSettings.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "284"
-            endingLineNumber = "284"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
             landmarkName = "handleOptionMenu(type:)"
             landmarkType = "7">
          </BreakpointContent>

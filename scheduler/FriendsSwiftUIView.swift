@@ -15,6 +15,7 @@ struct DetailView: View {
     
     var body: some View {
         VStack {
+            CalendarView(uid: item)
             Text(item)
                 .font(.title)
                 .padding()
