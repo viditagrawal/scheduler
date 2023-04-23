@@ -50,7 +50,6 @@
 		2D00C5C229F3FD5700EC9001 /* FriendsSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C5C129F3FD5700EC9001 /* FriendsSwiftUIView.swift */; };
 		5E119E9929F4816100C7424C /* CourseRecSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E119E9829F4816100C7424C /* CourseRecSwiftUIView.swift */; };
 		5E6813AF29F5158C00B0278D /* FriendRecSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6813AE29F5158C00B0278D /* FriendRecSwiftUIView.swift */; };
-		5EE2DCAC29F57B3C00D5737D /* calendar-checked-concept-vector-linear-icon-isolated-transpar-transparent-background-transparency-outline-style-130091442.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5EE2DCAB29F57B3C00D5737D /* calendar-checked-concept-vector-linear-icon-isolated-transpar-transparent-background-transparency-outline-style-130091442.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,7 +130,6 @@
 		5EAD9E2729F53CCE0040BA79 /* GT-Walsheim-Pro-Trial-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GT-Walsheim-Pro-Trial-Medium.otf"; path = "../../../Downloads/GT-Walsheim-Pro-Trial-Medium.otf"; sourceTree = "<group>"; };
 		5EAD9E2829F53CFC0040BA79 /* GT-Walsheim-Pro-Trial-Medium 2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GT-Walsheim-Pro-Trial-Medium 2.otf"; path = "../../../Downloads/GT-Walsheim-Pro-Trial-Medium 2.otf"; sourceTree = "<group>"; };
 		5EAD9E2929F53D030040BA79 /* GT-Walsheim-Pro-Trial-Condensed-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GT-Walsheim-Pro-Trial-Condensed-Regular.otf"; path = "../../../Downloads/GT-Walsheim-Pro-Trial-Condensed-Regular.otf"; sourceTree = "<group>"; };
-		5EE2DCAB29F57B3C00D5737D /* calendar-checked-concept-vector-linear-icon-isolated-transpar-transparent-background-transparency-outline-style-130091442.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "calendar-checked-concept-vector-linear-icon-isolated-transpar-transparent-background-transparency-outline-style-130091442.jpg"; path = "../../../Downloads/calendar-checked-concept-vector-linear-icon-isolated-transpar-transparent-background-transparency-outline-style-130091442.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,7 +247,6 @@
 				2D00C52329F3A36D00EC9001 /* AppDelegate.swift */,
 				2D00C52529F3A36D00EC9001 /* SceneDelegate.swift */,
 				2D00C52C29F3A36F00EC9001 /* Assets.xcassets */,
-				5EE2DCAB29F57B3C00D5737D /* calendar-checked-concept-vector-linear-icon-isolated-transpar-transparent-background-transparency-outline-style-130091442.jpg */,
 				5EAD9E2729F53CCE0040BA79 /* GT-Walsheim-Pro-Trial-Medium.otf */,
 				5EAD9E2829F53CFC0040BA79 /* GT-Walsheim-Pro-Trial-Medium 2.otf */,
 				2D00C53129F3A36F00EC9001 /* Info.plist */,
@@ -456,7 +453,6 @@
 				15583C2D29F49157009C868D /* events.json in Resources */,
 				2D00C52D29F3A36F00EC9001 /* Assets.xcassets in Resources */,
 				2D00C52B29F3A36D00EC9001 /* Main.storyboard in Resources */,
-				5EE2DCAC29F57B3C00D5737D /* calendar-checked-concept-vector-linear-icon-isolated-transpar-transparent-background-transparency-outline-style-130091442.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
