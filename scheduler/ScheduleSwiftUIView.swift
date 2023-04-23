@@ -35,6 +35,7 @@ struct ScheduleSwiftUIView: View {
     var body: some View {
         VStack {
             CalendarView()
+            
             Spacer()
             HStack {
                 Spacer()
