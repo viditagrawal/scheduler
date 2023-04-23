@@ -12,7 +12,7 @@ import FirebaseAuth
 struct LoginSwiftUIView: View {
     var body: some View {
         Login()
-        Image("minz")
+//        Image("minz")
         
     }
 }
