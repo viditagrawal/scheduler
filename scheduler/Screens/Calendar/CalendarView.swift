@@ -64,7 +64,7 @@ struct CalendarView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
                     if let event = viewModel.addNewEvent() {
-                        events.append(event)
+                        //events.append(event)
                         
                         viewModel.loadEvents { (items) in
                             print("Items: ", items)
