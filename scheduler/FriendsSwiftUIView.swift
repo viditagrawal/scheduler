@@ -7,6 +7,8 @@
 
 import SwiftUI
 import FirebaseAuth
+import FirebaseFirestore
+
 
 struct DetailView: View {
     var item: String
@@ -28,12 +30,22 @@ struct DetailView: View {
 //var recommended = []
 
 //friends you are already friends with
-//var friends = []
+var friends: [String] = []
+
+func gettingUsers(){
+    if let currentUser = Auth.auth().currentUser {
+        let userID = currentUser.uid
+        print("Current user ID: \(userID)")
+    }
+    else{
+        print("no user is signed in.")
+    }
+}
 
 struct FriendsSwiftUIView: View {
     @State private var searchText = ""
     @State private var selectedChoice = ""
-    let choices = ["friend1", "friend2", "friend3", "friend4"]
+    let choices = ["student1", "student2", "student3"]
     var filteredItems: [String] {
         if searchText.isEmpty {
             return choices
