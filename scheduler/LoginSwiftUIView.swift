@@ -12,6 +12,7 @@ import FirebaseAuth
 struct LoginSwiftUIView: View {
     var body: some View {
         Login()
+        Image("Group 4").resizable().frame(width: 300.0, height: 155.0, alignment: .center)
 //        Image("minz")
         
     }

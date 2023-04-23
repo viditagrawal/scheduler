@@ -108,7 +108,7 @@ struct SignUp: View{
                 GeometryReader{_ in
                     
                     VStack{
-                        Image("finance_app").resizable().frame(width: 300.0, height: 155.0, alignment: .center)
+                        Image("Group 4").resizable().frame(width: 300.0, height: 155.0, alignment: .center)
                         
                         Text("Sign up a new account")
                             .font(.title)
