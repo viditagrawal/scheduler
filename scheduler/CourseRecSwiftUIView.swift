@@ -52,7 +52,7 @@ struct CourseRecSwiftUIView: View {
                                     var result = [String]()
                                     for key in sortedKeys
                                     {
-                                        result.append(json[key] ?? "" + courseDict[key])
+                                        result.append(json[key] ?? "" + courseDict[key]!.description)
                                     }
                                     self.courses = result
                                     self.queriedYet = true
