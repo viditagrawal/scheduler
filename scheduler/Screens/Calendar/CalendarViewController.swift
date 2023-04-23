@@ -71,7 +71,7 @@ final class CalendarViewController: UIViewController, KVKCalendarSettings, KVKCa
         view.addSubview(calendarView)
         setupBarButtons()
         
-        loadEvents(uid: "", dateFormat: style.timeSystem.format) { (events) in
+        loadEvents(dateFormat: style.timeSystem.format) { (events) in
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
                 self?.events = events
             }
@@ -119,7 +119,7 @@ final class CalendarViewController: UIViewController, KVKCalendarSettings, KVKCa
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         // to track changing windows and theme of device
         
-        loadEvents(uid: "", dateFormat: style.timeSystem.format) { [weak self] (events) in
+        loadEvents(dateFormat: style.timeSystem.format) { [weak self] (events) in
             if let style = self?.style {
                 self?.calendarView.updateStyle(style)
             }
