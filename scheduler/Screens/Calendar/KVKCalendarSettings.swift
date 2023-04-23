@@ -85,31 +85,125 @@ extension KVKCalendarSettings where Self: KVKCalendarDataModel {
         return events + mappedEvents
     }
     
+    
     func loadEvents(dateFormat: String, completion: ([Event]) -> Void) {
-        var result : [String]
         let decoder = JSONDecoder()
-        
+        var courses : Set<String> = []
         if let curruser = Auth.auth().currentUser {
-            let uid = curruser.uid
+            //let uid = curruser.uid
+            let uid = "PeT7yg3UqCRbf3CkjoAJoFv0l8z2"
             let db = Firestore.firestore()
             let currData = db.collection("data").document(uid)
             
+            //print("currData: \(currData)")
+            
             currData.getDocument { (document, error) in
                 if let error = error {
-                    print(error)
+                    print("Error: \(error)")
                 } else if let document = document, document.exists {
                     let data = document.data()
-                    result = data?["courses"] as? [String] ?? []
+                    //print("Data: \(data)")
+                    if let currcourses = data?["courses"] as? [String]{
+                        print("courses: \(currcourses)")
+                        for i in currcourses{
+                            courses.insert(i)
+                            print(i)
+                        }
+                        print(courses.count)
+                        for i in courses {
+                            print("course: \(i)")
+                            print(courseDict[i])
+                        }
+                        
+                        let timeString = "15:30"
+                        let daysString = "T R"
+
+                        let formatter = DateFormatter()
+                        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+
+                        let today = Date()
+                        let calendar = Calendar.current
+
+                        var dateComponents = calendar.dateComponents([.year, .month, .day], from: today)
+
+                        // Set the time components
+                        let timeComponents = timeString.split(separator: ":").map({ Int($0)! })
+                        dateComponents.hour = timeComponents[0]
+                        dateComponents.minute = timeComponents[1]
+
+                        // Set the day of the week components
+                        let daysArray = daysString.trimmingCharacters(in: .whitespaces).map({ String($0) })
+                        let weekdays = [Calendar.current.weekdaySymbols, Calendar.current.shortWeekdaySymbols].flatMap({ $0 })
+                        let daysIndexes = daysArray.compactMap({ weekdays.firstIndex(of: $0) })
+                        dateComponents.weekday = daysIndexes.first
+
+                        // Create the date
+                        if let date = calendar.date(from: dateComponents) {
+                            let dateString = formatter.string(from: date)
+                            print(dateString)
+                        }
+
+
+
+
+
+
+
+                        
+                        // Load existing JSON data
+                        /*
+                         guard let url = Bundle.main.url(forResource: "events", withExtension: "json"),
+                         let data = try? Data(contentsOf: url),
+                         var json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                         else {
+                         fatalError("Failed to load or parse JSON data.")
+                         }
+                         
+                         // Create a new event
+                         
+                         for course in courses {
+                         let newEvent: [String: Any] = [
+                         "all_day": 0,
+                         "border_color": "#333333",
+                         "color": "#ffa500",
+                         "end": "2023-05-01T18:00:00+01:00",
+                         "id": "1402",
+                         "start": "2023-05-01T12:00:00+01:00",
+                         "text_color": "#000000",
+                         "title": "New Event",
+                         "files": []
+                         ]
+                         
+                         // Add the new event to the existing data
+                         var events : [[String: Any]] = []
+                         events.append(newEvent)
+                         }
+                         
+                         
+                         // Write the updated JSON data to a file
+                         do {
+                         json["data"] = events
+                         let updatedData = try JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
+                         try updatedData.write(to: url)
+                         print("JSON data updated successfully.")
+                         } catch {
+                         print("Failed to write updated JSON data: \(error)")
+                         }
+                         
+                         }*/
+                    }
                 }
+
             }
         }
+    
         
-        var courseIDs : [Course]
+    
         
-        for id in result {
-            print (id)
-            courseIDs.append(courseDict[id])
-        }
+        
+        guard let path = Bundle.main.path(forResource: "events", ofType: "json"),
+              let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe),
+              let result = try? decoder.decode(ItemData.self, from: data) else { return }
         
             let events = result.data.compactMap({ (item) -> Event in
             let startDate = formatter(date: item.start)

@@ -58,6 +58,8 @@ struct CalendarView: View {
                 Button {
                     if let event = viewModel.addNewEvent() {
                         events.append(event)
+                        //calendarView.reload
+                        //calendarView.loadEvents(completion: completion)
                     }
                 } label: {
                     Image(systemName: "plus")

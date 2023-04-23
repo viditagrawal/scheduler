@@ -26,6 +26,7 @@ struct ScheduleSwiftUIView: View {
                     TextField("Enter your course ID", text: $courseID)
                         .foregroundColor(.black)
                     Button("OK", action: submit)
+                    
                 }
                 .padding()
                 .background(Color.blue)
