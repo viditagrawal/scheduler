@@ -8,15 +8,18 @@
 import Foundation
 import SwiftUI
 import KVKCalendar
+import FirebaseAuth
+import FirebaseFirestore
 
 @available(iOS 14.0, *)
 struct CalendarView: View {
-    
     @State private var typeCalendar = CalendarType.day
     @State private var events: [Event] = []
     @State private var updatedDate: Date?
     @State private var orientation: UIInterfaceOrientation = .unknown
     @ObservedObject private var viewModel = CalendarViewModel()
+    
+    var uid : String
     
     var body: some View {
         kvkHandleNavigationView(calendarView)
@@ -74,6 +77,7 @@ struct CalendarView: View {
                 }
                 
             }
+            
         }
     }
     
@@ -82,6 +86,9 @@ struct CalendarView: View {
 @available(iOS 14.0, *)
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarView()
+        if let curruser = Auth.auth().currentUser {
+            let myUid = curruser.uid
+            CalendarView(uid: myUid)
+        }
     }
 }

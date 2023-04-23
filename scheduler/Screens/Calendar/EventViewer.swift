@@ -13,7 +13,7 @@ final class EventViewer: UIView {
         let label = UILabel()
         label.font = .systemFont(ofSize: 19)
         label.textAlignment = .center
-        label.numberOfLines = 0
+        label.numberOfLines = 1
         label.text = "Select event to view the description"
         return label
     }()

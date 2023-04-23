@@ -29,7 +29,7 @@ struct Login: View{
     @State var alert = false
     @State var error = ""
     @State var title = ""
-    
+    @State var isActive = false
     let borderColor = Color(red: 107.0/255.0, green: 164.0/255.0, blue: 252.0/255.0)
     
     var body: some View{
@@ -85,23 +85,26 @@ struct Login: View{
             }
             
             // Sign in button
-            Button(action: {
-                print("hello")
-                self.Verify()
-            }) {
+            NavigationLink(destination: MyHomeViewController().navigationBarBackButtonHidden(), isActive: $isActive) {
+                    EmptyView()
+                }
+                Button(action: {
+                    self.Verify()
+                    self.isActive = true // assign value outside closure
+                }) {
                 Text("Sign in")
                     .foregroundColor(.white)
                     .fontWeight(.bold)
                     .padding(.vertical)
                     .frame(width: UIScreen.main.bounds.width - 50)
-            }
-            .background(.black)
-            .cornerRadius(6)
-            .padding(.top, 15)
-            .alert(isPresented: $alert){()->Alert in
-                return Alert(title: Text("\(self.title)"), message: Text("\(self.error)"), dismissButton:
-                        .default(Text("OK").fontWeight(.semibold)))
-            }
+                }.background(.black)
+                .cornerRadius(6)
+                .padding(.top, 15)
+                .alert(isPresented: self.$alert){()->Alert in
+                    return Alert(title: Text("Sign up error"), message: Text("\(self.error)"), dismissButton:
+                            .default(Text("OK").fontWeight(.semibold)))
+                }
+    
             
             HStack(spacing: 5){
                 Text("Don't have an account ?")

@@ -34,7 +34,9 @@ struct ScheduleSwiftUIView: View {
     }
     var body: some View {
         VStack {
-            CalendarView()
+            if let curruser = Auth.auth().currentUser {
+                let myUid = curruser.uid
+                CalendarView(uid: "nov3ez1BSmbyx1cN1ONXi8EJdSl1")}
             
             Spacer()
             HStack {
@@ -54,7 +56,7 @@ struct ScheduleSwiftUIView: View {
                 .alignmentGuide(.bottom) { d in d[.bottom] }
                 .alignmentGuide(.trailing) { d in d[.trailing] }
             }
-            .padding(.bottom, 100)
+            .padding(.bottom, 80)
             .padding(.trailing, 30)
         }
         .edgesIgnoringSafeArea(.all)

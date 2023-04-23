@@ -45,7 +45,6 @@
 		2D00C5C029F3FCD500EC9001 /* ScheduleSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C5BF29F3FCD500EC9001 /* ScheduleSwiftUIView.swift */; };
 		2D00C5C229F3FD5700EC9001 /* FriendsSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D00C5C129F3FD5700EC9001 /* FriendsSwiftUIView.swift */; };
 		5E119E9929F4816100C7424C /* CourseRecSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E119E9829F4816100C7424C /* CourseRecSwiftUIView.swift */; };
-		5E6813AD29F5116E00B0278D /* scheduler-41a5e-firebase-adminsdk-tjc3z-66c9a7f140.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E6813AC29F5116E00B0278D /* scheduler-41a5e-firebase-adminsdk-tjc3z-66c9a7f140.json */; };
 		5E6813AF29F5158C00B0278D /* FriendRecSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6813AE29F5158C00B0278D /* FriendRecSwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
@@ -97,7 +96,6 @@
 		2D00C5BF29F3FCD500EC9001 /* ScheduleSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSwiftUIView.swift; sourceTree = "<group>"; };
 		2D00C5C129F3FD5700EC9001 /* FriendsSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsSwiftUIView.swift; sourceTree = "<group>"; };
 		5E119E9829F4816100C7424C /* CourseRecSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRecSwiftUIView.swift; sourceTree = "<group>"; };
-		5E6813AC29F5116E00B0278D /* scheduler-41a5e-firebase-adminsdk-tjc3z-66c9a7f140.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "scheduler-41a5e-firebase-adminsdk-tjc3z-66c9a7f140.json"; path = "../../../Library/Messages/Attachments/2d/13/98F280C7-AA7D-4ABE-918E-E62DBA07EB4D/scheduler-41a5e-firebase-adminsdk-tjc3z-66c9a7f140.json"; sourceTree = "<group>"; };
 		5E6813AE29F5158C00B0278D /* FriendRecSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRecSwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,7 +191,6 @@
 				2D00C59529F3C2A600EC9001 /* LoginSwiftUIView.swift */,
 				2D00C55429F3B13D00EC9001 /* SignUpSwiftUIView.swift */,
 				2D00C5BF29F3FCD500EC9001 /* ScheduleSwiftUIView.swift */,
-				5E6813AC29F5116E00B0278D /* scheduler-41a5e-firebase-adminsdk-tjc3z-66c9a7f140.json */,
 				2D00C5C129F3FD5700EC9001 /* FriendsSwiftUIView.swift */,
 			);
 			path = scheduler;
@@ -359,7 +356,6 @@
 				2D00C5B229F3D31600EC9001 /* GoogleService-Info.plist in Resources */,
 				15583C2D29F49157009C868D /* events.json in Resources */,
 				2D00C52D29F3A36F00EC9001 /* Assets.xcassets in Resources */,
-				5E6813AD29F5116E00B0278D /* scheduler-41a5e-firebase-adminsdk-tjc3z-66c9a7f140.json in Resources */,
 				2D00C52B29F3A36D00EC9001 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
