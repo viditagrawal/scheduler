@@ -32,7 +32,9 @@ struct CalendarView: View {
         })
         .onAppear {
             viewModel.loadEvents { (items) in
-                events = items
+                print("Items: ", items)
+                print("updatedEvents: ", updatedEvents)
+                events = updatedEvents
             }
         }
         .navigationBarTitle("KVKCalendar", displayMode: .inline)
@@ -58,11 +60,16 @@ struct CalendarView: View {
                 Button {
                     if let event = viewModel.addNewEvent() {
                         events.append(event)
-                        //calendarView.reload
-                        //calendarView.loadEvents(completion: completion)
+                        
+                        viewModel.loadEvents { (items) in
+                            print("Items: ", items)
+                            print("updatedEvents: ", updatedEvents)
+                            events = updatedEvents
+                        }
+                        
                     }
                 } label: {
-                    Image(systemName: "plus")
+                    Image(systemName: "arrow.clockwise")
                         .foregroundColor(.red)
                 }
                 

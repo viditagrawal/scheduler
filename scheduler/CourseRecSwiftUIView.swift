@@ -46,13 +46,24 @@ struct CourseRecSwiftUIView: View {
                                     //print(type(of:dataString))
                                     if let jsonData = dataString.data(using: .utf8){
                                     let json = try! JSONSerialization.jsonObject(with: jsonData, options: [.allowFragments]) as![String:String]
-                                    print(json)
+                                    print("Json: ",json)
                                     let sortedKeys = Array(json.keys).sorted(by: >)
-                                    print(sortedKeys)
+                                    print("SortedKeys: ",sortedKeys)
                                     var result = [String]()
                                     for key in sortedKeys
                                     {
-                                        result.append(json[key] ?? "" + courseDict[key]!.description)
+                                        print(courseDict[json[key]!]?.description)
+//                                        print(c)
+                                        do{
+                                            var description = courseDict[json[key]!]?.description
+                                            try result.append((json[key]! ?? "") + ": " + (description ?? "No Description") )
+                                        }
+                                        catch{
+                                            result.append(json[key] ?? "")
+                                        }
+                                        
+                                            
+                                        
                                     }
                                     self.courses = result
                                     self.queriedYet = true
