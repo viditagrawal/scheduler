@@ -93,7 +93,7 @@ extension KVKCalendarSettings where Self: KVKCalendarDataModel {
         let decoder = JSONDecoder()
         var courses : Set<String> = []
         if let curruser = Auth.auth().currentUser {
-            //let uid = curruser.uid
+            let uid = curruser.uid
             //let uid = "PeT7yg3UqCRbf3CkjoAJoFv0l8z2"
             let db = Firestore.firestore()
             let currData = db.collection("data").document(uid)
