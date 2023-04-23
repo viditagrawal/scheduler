@@ -21,6 +21,7 @@ let headers = [
   "content-type": "application/json",
   "authorization": "Bearer m41doASsy8NROlwnw6TXLIhH0dhXV8XQEaYvYKvk"
 ]
+public var courseDict = [String : Course]()
 
 class SignUpViewController: UIViewController {
     @IBOutlet weak var theContainer : UIView!
@@ -35,7 +36,7 @@ class SignUpViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    var courseDict = [String : Course]()
+    
         
         override func viewWillAppear(_ animated: Bool) {
             let urls = ["https://api.ucsb.edu/academics/curriculums/v3/classes/search?quarter=20232&pageNumber=1&pageSize=500&includeClassSections=true", "https://api.ucsb.edu/academics/curriculums/v3/classes/search?quarter=20232&pageNumber=2&pageSize=500&includeClassSections=true","https://api.ucsb.edu/academics/curriculums/v3/classes/search?quarter=20232&pageNumber=3&pageSize=500&includeClassSections=true", "https://api.ucsb.edu/academics/curriculums/v3/classes/search?quarter=20232&pageNumber=4&pageSize=500&includeClassSections=true", "https://api.ucsb.edu/academics/curriculums/v3/classes/search?quarter=20232&pageNumber=5&pageSize=500&includeClassSections=true"]
@@ -104,7 +105,7 @@ class SignUpViewController: UIViewController {
                                                     }
                                                 }
                                                 
-                                                self.courseDict[temp.courseID] = temp
+                                                courseDict[temp.courseID] = temp
                                                 
                                                 
                                                 
@@ -124,8 +125,8 @@ class SignUpViewController: UIViewController {
                 task.resume()
             }
             sleep(3)
-            print("Count: \(self.courseDict.count)")
-            for (title, course) in self.courseDict{
+            print("Count: \(courseDict.count)")
+            for (title, course) in courseDict{
                 print(title)
             }
         }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Course : Decodable {
+public struct Course : Decodable {
     var title: String
     var description: String
     var instructor: String
