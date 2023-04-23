@@ -64,6 +64,8 @@ struct ScheduleSwiftUIView: View {
     func submit() {
         updateCourses(courseID: courseID, completion: {_ in 
             courseID = ""
+            let friendRecInstance = FriendRecSwiftUIView()
+            friendRecInstance.hitEndpoint(completion: {_ in })
         })
     }
 }
