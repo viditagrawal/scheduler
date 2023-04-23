@@ -16,9 +16,12 @@ struct DetailView: View {
     var body: some View {
         VStack {
             
-            Image("minzLogo").frame(width: 300, height: 155, alignment: .center).aspectRatio(contentMode: .fit)
+            //Image("minzLogo").frame(width: 100, height: 52.3, alignment: .top).aspectRatio(contentMode: .fit).padding(.top, 45)
             
-            CalendarView(uid: item)
+            var components = item.components(separatedBy: " (")
+            CalendarView(uid: String(components[1].dropLast()))
+            //CalendarView(uid: item)
+            
             Text("This is the detail view for \(item).")
                 .padding()
         }
@@ -53,7 +56,7 @@ func gettingUsers(completion: @escaping ([String]?, Error?) -> Void) {
                             if let friendDocument = friendDocument, friendDocument.exists {
                                 let friendData = friendDocument.data()
                                 if let username = friendData?["user"] as? String {
-                                    friends.append(username)
+                                    friends.append(username + " (" + uid + ")")
                                     print("friends\(friends)")
                                 }
                             }
@@ -118,7 +121,7 @@ struct FriendsSwiftUIView: View {
                     }
                 }
             }
-            BackgroundView()
+            //BackgroundView()
         }
     }
 }
