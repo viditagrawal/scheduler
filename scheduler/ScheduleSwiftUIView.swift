@@ -34,7 +34,10 @@ struct ScheduleSwiftUIView: View {
     }
     var body: some View {
         VStack {
-            CalendarView().position(x: 200,y: 325)
+            if let curruser = Auth.auth().currentUser {
+                let myUid = curruser.uid
+                CalendarView(uid: "nov3ez1BSmbyx1cN1ONXi8EJdSl1")}
+            
             Spacer()
             HStack {
                 Spacer()
