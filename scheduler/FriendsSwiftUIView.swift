@@ -15,6 +15,8 @@ struct DetailView: View {
     
     var body: some View {
         VStack {
+            Image("minzLogo").frame(width: 300, height: 155, alignment: .center).aspectRatio(contentMode: .fit)
+            
             CalendarView(uid: item)
             Text(item)
                 .font(.title)
@@ -34,6 +36,7 @@ struct DetailView: View {
 var friends: [String] = []
 
 func gettingUsers(completion: @escaping ([String]?, Error?) -> Void) {
+    
     if let currentUser = Auth.auth().currentUser {
         let userID = currentUser.uid
         print("Current user ID: \(userID)")
@@ -70,6 +73,8 @@ struct FriendsSwiftUIView: View {
             }
         }
     var body: some View {
+        ZStack{
+            
             NavigationView {
                 VStack {
                     TextField("Search", text: $searchText)
@@ -97,7 +102,9 @@ struct FriendsSwiftUIView: View {
                     }
                 }
             }
+            BackgroundView()
         }
+    }
 }
 
 
@@ -110,4 +117,7 @@ struct FriendsSwiftUIView_Previews: PreviewProvider {
         
     }
 }
+
+
+
 

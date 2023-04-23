@@ -58,8 +58,8 @@ struct ScheduleSwiftUIView: View {
                 .alignmentGuide(.bottom) { d in d[.bottom] }
                 .alignmentGuide(.trailing) { d in d[.trailing] }
             }
-            .padding(.bottom, 80)
-            .padding(.trailing, 30)
+            .padding(.leading, 60)
+            .padding(.trailing, 60)
         }
         .edgesIgnoringSafeArea(.all)
     }
