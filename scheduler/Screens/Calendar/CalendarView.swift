@@ -60,11 +60,6 @@ struct CalendarView: View {
                     } label: {
                         Text("Today")
                             .font(.headline)
-<<<<<<< Updated upstream
-                            .foregroundColor(.blue)
-=======
-=======
->>>>>>> Stashed changes
                             .font(Font.custom("GT-Walsheim-Pro-Trial-Medium", size: 18))
                             .foregroundColor(.green)
                     }

@@ -53,6 +53,7 @@ struct FriendRow: View {
     var body: some View {
         NavigationLink(destination: Text(friend.name)){
             HStack{
+                Image( alignment: .trailing,)
                 VStack(alignment: .leading, spacing: 10){
                     
                     VStack (alignment: .leading){
