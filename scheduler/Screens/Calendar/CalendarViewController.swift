@@ -170,6 +170,25 @@ extension CalendarViewController: CalendarDelegate {
             events.append(newEvent)
         }
     }
+    
+    func createEvents(completion: ([Event]) -> Void) {
+        let models = updatedEvents// Get events from storage / API
+        
+        let events = models.compactMap({ (item) in
+            var event = Event(ID: item.ID)
+            event.start = item.start // start date event
+            event.end = item.end // end date event
+            event.color = item.color
+            event.isAllDay = false
+            event.recurringType = .everyWeek// recurring event type - .everyDay, .everyWeek
+        
+            // Add text event (title, info, location, time)
+            
+            return event
+            
+        })
+        completion(updatedEvents)
+    }
 }
 
 // MARK: - Calendar datasource

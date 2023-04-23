@@ -19,6 +19,8 @@ protocol KVKCalendarDataModel {
     
 }
 
+public var updatedEvents = [Event]()
+
 protocol KVKCalendarSettings {}
 
 extension KVKCalendarSettings where Self: KVKCalendarDataModel {
@@ -86,6 +88,7 @@ extension KVKCalendarSettings where Self: KVKCalendarDataModel {
     }
     
     
+    
     func loadEvents(dateFormat: String, completion: ([Event]) -> Void) {
         let decoder = JSONDecoder()
         var courses : Set<String> = []
@@ -110,43 +113,120 @@ extension KVKCalendarSettings where Self: KVKCalendarDataModel {
                             print(i)
                         }
                         print(courses.count)
+                        
+                        
                         for i in courses {
-                            print("course: \(i)")
-                            print(courseDict[i])
+                            let timeString = courseDict[i]?.beginTime
+                            let daysString = courseDict[i]?.days
+                            
+                            let trimmedString = daysString!.trimmingCharacters(in: .whitespaces)
+                            let daysArray = trimmedString.components(separatedBy: " ")
+                            print("timeString: ", timeString)
+                            print("daysString: ", daysString)
+                            print("daysArray: ", daysArray)
+                            
+                            let formatter = DateFormatter()
+                            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+                            
+                            let timeTrimmedString = timeString!.trimmingCharacters(in: .whitespaces)
+                            let timeComponents = timeTrimmedString.components(separatedBy: ":")
+
+                            let today = Date()
+                            let calendar = Calendar.current
+                            
+                            var dateComponents = calendar.dateComponents([.year, .month, .day], from: today)
+                            
+                            dateComponents.hour = Int(timeComponents[0])! - 7
+                            dateComponents.minute = Int(timeComponents[1])
+                            
+                            var currTime = calendar.date(from: dateComponents)!
+                            
+                            var weekComponents = calendar.dateComponents([.weekday], from: today)
+                            print("Weekday: \(String(describing: weekComponents.weekday))")
+                            
+                            var weekday = weekComponents.weekday
+                            
+                            var timesArray : [Date] = []
+                            
+                            for i in 0...7 {
+                                if daysArray.contains("M") && (weekday!+i) % 7 == 2 {
+                                    var currDate = calendar.date(byAdding: .day, value: i, to: currTime)
+                                    for i in 0...10 {
+                                        var nextWeek = calendar.date(byAdding: .weekOfYear, value: i, to: currDate!)
+                                        timesArray.append(nextWeek!)
+                                    }
+                                }
+                                if daysArray.contains("T") && (weekday!+i) % 7 == 3 {
+                                    var currDate = calendar.date(byAdding: .day, value: i, to: currTime)
+                                    var nextWeek = calendar.date(byAdding: .weekOfYear, value: 1, to: currDate!)
+                                    for i in 0...10 {
+                                        var nextWeek = calendar.date(byAdding: .weekOfYear, value: i, to: currDate!)
+                                        timesArray.append(nextWeek!)
+                                    }
+                                }
+                                if daysArray.contains("W") && (weekday!+i) % 7 == 4 {
+                                    var currDate = calendar.date(byAdding: .day, value: i, to: currTime)
+                                    var nextWeek = calendar.date(byAdding: .weekOfYear, value: 1, to: currDate!)
+                                    for i in 0...10 {
+                                        var nextWeek = calendar.date(byAdding: .weekOfYear, value: i, to: currDate!)
+                                        timesArray.append(nextWeek!)
+                                    }
+                                }
+                                if daysArray.contains("R") && (weekday!+i) % 7 == 5 {
+                                    var currDate = calendar.date(byAdding: .day, value: i, to: currTime)
+                                    var nextWeek = calendar.date(byAdding: .weekOfYear, value: 1, to: currDate!)
+                                    for i in 0...10 {
+                                        var nextWeek = calendar.date(byAdding: .weekOfYear, value: i, to: currDate!)
+                                        timesArray.append(nextWeek!)
+                                    }
+                                }
+                                if daysArray.contains("F") && (weekday!+i) % 7 == 6 {
+                                    var currDate = calendar.date(byAdding: .day, value: i, to: currTime)
+                                    var nextWeek = calendar.date(byAdding: .weekOfYear, value: 1, to: currDate!)
+                                    for i in 0...10 {
+                                        var nextWeek = calendar.date(byAdding: .weekOfYear, value: i, to: currDate!)
+                                        timesArray.append(nextWeek!)
+                                    }
+                                }
+                            }
+                            
+                            print("timesArray: ", timesArray)
+                            
+                            // Set the day of the week components
+                            let weekdays = [Calendar.current.weekdaySymbols, Calendar.current.shortWeekdaySymbols].flatMap({ $0 })
+                            let daysIndexes = daysArray.compactMap({ weekdays.firstIndex(of: $0) })
+                            dateComponents.weekday = daysIndexes.first
+                            
+                            // Create the date
+                            if let date = calendar.date(from: dateComponents) {
+                                let dateString = formatter.string(from: date)
+                                print(dateString)
+                            }
+                
+                            
+                            for times in timesArray{
+                                
+                                var dateComponents = DateComponents()
+                                dateComponents.minute = 90
+                                var endtime = calendar.date(byAdding: dateComponents, to: times)
+                                
+                                
+                                var newEvent = Event(ID: courseDict[i]!.courseID)
+                                newEvent.isAllDay = false
+                                newEvent.start = times
+                                newEvent.end = endtime!
+                                newEvent.data = courseDict[i]!.title
+                                newEvent.textColor = UIColor(.blue)
+                                newEvent.backgroundColor = UIColor(.green)
+                                
+                                
+                                updatedEvents.append(newEvent)
+                                
+                            }
+                            
                         }
                         
-                        let timeString = "15:30"
-                        let daysString = "T R"
-
-                        let formatter = DateFormatter()
-                        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-
-                        let today = Date()
-                        let calendar = Calendar.current
-
-                        var dateComponents = calendar.dateComponents([.year, .month, .day], from: today)
-
-                        // Set the time components
-                        let timeComponents = timeString.split(separator: ":").map({ Int($0)! })
-                        dateComponents.hour = timeComponents[0]
-                        dateComponents.minute = timeComponents[1]
-
-                        // Set the day of the week components
-                        let daysArray = daysString.trimmingCharacters(in: .whitespaces).map({ String($0) })
-                        let weekdays = [Calendar.current.weekdaySymbols, Calendar.current.shortWeekdaySymbols].flatMap({ $0 })
-                        let daysIndexes = daysArray.compactMap({ weekdays.firstIndex(of: $0) })
-                        dateComponents.weekday = daysIndexes.first
-
-                        // Create the date
-                        if let date = calendar.date(from: dateComponents) {
-                            let dateString = formatter.string(from: date)
-                            print(dateString)
-                        }
-
-
-
-
-
+                        print("EVENTS: ", updatedEvents)
 
 
                         
