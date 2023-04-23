@@ -199,7 +199,7 @@ struct SignUp: View{
                             NavigationLink(destination: MyLoginViewController()){
                                 Text("Log in")
                                     .fontWeight(.bold)
-                                    .foregroundColor(.blue)
+                                    .foregroundColor(.green)
                             }
                             
                             Text("now").multilineTextAlignment(.leading)

@@ -20,18 +20,19 @@ final class CalendarViewController: UIViewController, KVKCalendarSettings, KVKCa
     var selectDate = Date()
     var style: Style {
         createCalendarStyle()
+        //style.week.colorBackgroundCurrentDate = .systemMint
     }
     var eventViewer = EventViewer()
     
     private lazy var todayButton: UIBarButtonItem = {
         let button = UIBarButtonItem(title: "Today", style: .done, target: self, action: #selector(today))
-        button.tintColor = .systemRed
+        button.tintColor = .systemGreen
         return button
     }()
     
     private lazy var reloadStyle: UIBarButtonItem = {
         let button = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(reloadCalendarStyle))
-        button.tintColor = .systemRed
+        button.tintColor = .systemGreen
         return button
     }()
     
@@ -48,7 +49,7 @@ final class CalendarViewController: UIViewController, KVKCalendarSettings, KVKCa
         if #available(iOS 14.0, *) {
             let btn = UIBarButtonItem(title: calendarView.selectedType.title, menu: createCalendarTypesMenu())
             btn.style = .done
-            btn.tintColor = .systemRed
+            btn.tintColor = .systemGreen
             return btn
         } else {
             return UIBarButtonItem()

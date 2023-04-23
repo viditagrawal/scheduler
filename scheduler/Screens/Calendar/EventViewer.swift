@@ -20,7 +20,7 @@ final class EventViewer: UIView {
     
     private let lineView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemGray3
+        view.backgroundColor = .systemGreen
         return view
     }()
     

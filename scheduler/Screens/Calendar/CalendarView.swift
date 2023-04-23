@@ -13,6 +13,7 @@ import FirebaseFirestore
 
 @available(iOS 14.0, *)
 struct CalendarView: View {
+    //@State var style : Style = Style()
     @State private var typeCalendar = CalendarType.day
     @State private var events: [Event] = []
     @State private var updatedDate: Date?
@@ -34,6 +35,7 @@ struct CalendarView: View {
             orientation = newOrientation
         })
         .onAppear {
+            //style.week.colorBackgroundCurrentDate = .green
             //sleep(5)
             myUID = uid
             viewModel.loadEvents { (items) in
@@ -50,14 +52,20 @@ struct CalendarView: View {
                     ItemsMenu<CalendarType>(type: $typeCalendar,
                                             items: CalendarType.allCases,
                                             showCheckmark: true,
+                                            color: .green,
                                             showDropDownIcon: true)
                     
                     Button {
                         updatedDate = Date()
                     } label: {
                         Text("Today")
+<<<<<<< Updated upstream
                             .font(.headline)
                             .foregroundColor(.blue)
+=======
+                            .font(Font.custom("GT-Walsheim-Pro-Trial-Medium", size: 18))
+                            .foregroundColor(.green)
+>>>>>>> Stashed changes
                     }
                 }
             }
@@ -75,7 +83,7 @@ struct CalendarView: View {
                     }
                 } label: {
                     Image(systemName: "arrow.clockwise")
-                        .foregroundColor(.red)
+                        .foregroundColor(.green)
                 }
                 
             }
