@@ -107,23 +107,28 @@ extension KVKCalendarSettings where Self: KVKCalendarDataModel {
                     let data = document.data()
                     //print("Data: \(data)")
                     if let currcourses = data?["courses"] as? [String]{
-                        print("courses: \(currcourses)")
+                        //print("courses: \(currcourses)")
                         for i in currcourses{
                             courses.insert(i)
-                            print(i)
+                            //print(i)
                         }
-                        print(courses.count)
-                        
+                        //print(courses.count)
                         
                         for i in courses {
+            
+                            
                             let timeString = courseDict[i]?.beginTime
                             let daysString = courseDict[i]?.days
                             
+                            print(i)
+                            print(timeString)
+                            print(daysString, "\n \n")
+                            
                             let trimmedString = daysString!.trimmingCharacters(in: .whitespaces)
                             let daysArray = trimmedString.components(separatedBy: " ")
-                            print("timeString: ", timeString)
-                            print("daysString: ", daysString)
-                            print("daysArray: ", daysArray)
+                            //print("timeString: ", timeString)
+                            //print("daysString: ", daysString)
+                            //print("daysArray: ", daysArray)
                             
                             let formatter = DateFormatter()
                             formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
@@ -142,7 +147,7 @@ extension KVKCalendarSettings where Self: KVKCalendarDataModel {
                             var currTime = calendar.date(from: dateComponents)!
                             
                             var weekComponents = calendar.dateComponents([.weekday], from: today)
-                            print("Weekday: \(String(describing: weekComponents.weekday))")
+                            //print("Weekday: \(String(describing: weekComponents.weekday))")
                             
                             var weekday = weekComponents.weekday
                             
@@ -190,7 +195,7 @@ extension KVKCalendarSettings where Self: KVKCalendarDataModel {
                                 }
                             }
                             
-                            print("timesArray: ", timesArray)
+                            //print("timesArray: ", timesArray)
                             
                             // Set the day of the week components
                             let weekdays = [Calendar.current.weekdaySymbols, Calendar.current.shortWeekdaySymbols].flatMap({ $0 })
@@ -200,7 +205,7 @@ extension KVKCalendarSettings where Self: KVKCalendarDataModel {
                             // Create the date
                             if let date = calendar.date(from: dateComponents) {
                                 let dateString = formatter.string(from: date)
-                                print(dateString)
+                                //print(dateString)
                             }
                 
                             
@@ -209,6 +214,7 @@ extension KVKCalendarSettings where Self: KVKCalendarDataModel {
                                 var dateComponents = DateComponents()
                                 dateComponents.minute = 90
                                 var endtime = calendar.date(byAdding: dateComponents, to: times)
+
                                 
                                 
                                 var newEvent = Event(ID: courseDict[i]!.courseID)
@@ -216,8 +222,11 @@ extension KVKCalendarSettings where Self: KVKCalendarDataModel {
                                 newEvent.start = times
                                 newEvent.end = endtime!
                                 newEvent.data = courseDict[i]!.title
-                                newEvent.textColor = UIColor(.blue)
-                                newEvent.backgroundColor = UIColor(.green)
+                                newEvent.textColor = UIColor(.white)
+                                newEvent.backgroundColor = UIColor(.red)
+                                newEvent.title = TextEvent(timeline: "\(courseDict[i]!.beginTime) - \(courseDict[i]!.endTime)\n\(courseDict[i]!.title)",
+                                                        month: "\(courseDict[i]!.title) \(courseDict[i]!.beginTime)",
+                                                        list: "\(courseDict[i]!.beginTime) - \(courseDict[i]!.endTime) \(courseDict[i]!.title)")
                                 
                                 
                                 updatedEvents.append(newEvent)
@@ -226,103 +235,15 @@ extension KVKCalendarSettings where Self: KVKCalendarDataModel {
                             
                         }
                         
-                        print("EVENTS: ", updatedEvents)
-
-
-                        
-                        // Load existing JSON data
-                        /*
-                         guard let url = Bundle.main.url(forResource: "events", withExtension: "json"),
-                         let data = try? Data(contentsOf: url),
-                         var json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-                         else {
-                         fatalError("Failed to load or parse JSON data.")
-                         }
-                         
-                         // Create a new event
-                         
-                         for course in courses {
-                         let newEvent: [String: Any] = [
-                         "all_day": 0,
-                         "border_color": "#333333",
-                         "color": "#ffa500",
-                         "end": "2023-05-01T18:00:00+01:00",
-                         "id": "1402",
-                         "start": "2023-05-01T12:00:00+01:00",
-                         "text_color": "#000000",
-                         "title": "New Event",
-                         "files": []
-                         ]
-                         
-                         // Add the new event to the existing data
-                         var events : [[String: Any]] = []
-                         events.append(newEvent)
-                         }
-                         
-                         
-                         // Write the updated JSON data to a file
-                         do {
-                         json["data"] = events
-                         let updatedData = try JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
-                         try updatedData.write(to: url)
-                         print("JSON data updated successfully.")
-                         } catch {
-                         print("Failed to write updated JSON data: \(error)")
-                         }
-                         
-                         }*/
                     }
                 }
-
             }
+            
+            completion(updatedEvents)
+            updatedEvents = []
+            
         }
-    
         
-    
-        
-        
-        guard let path = Bundle.main.path(forResource: "events", ofType: "json"),
-              let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe),
-              let result = try? decoder.decode(ItemData.self, from: data) else { return }
-        
-            let events = result.data.compactMap({ (item) -> Event in
-            let startDate = formatter(date: item.start)
-            let endDate = formatter(date: item.end)
-            let startTime = timeFormatter(date: startDate, format: dateFormat)
-            let endTime = timeFormatter(date: endDate, format: dateFormat)
-            
-            var event = Event(ID: item.id)
-            event.start = startDate
-            event.end = endDate
-            event.color = Event.Color(item.color)
-            event.isAllDay = item.allDay
-            event.isContainsFile = !item.files.isEmpty
-            
-            if item.allDay {
-                event.title = TextEvent(timeline: " \(item.title)",
-                                        month: "\(item.title) \(startTime)",
-                                        list: item.title)
-            } else {
-                event.title = TextEvent(timeline: "\(startTime) - \(endTime)\n\(item.title)",
-                                        month: "\(item.title) \(startTime)",
-                                        list: "\(startTime) - \(endTime) \(item.title)")
-            }
-            
-            if item.id == "14" {
-                event.recurringType = .everyMonth
-                var customeStyle = style.event
-                customeStyle.defaultHeight = 40
-                event.style = customeStyle
-            } else if item.id == "40" {
-                event.recurringType = .everyYear
-            } else if item.id == "1400" {
-                var customeStyle = style.event
-                customeStyle.defaultWidth = 40
-                event.style = customeStyle
-            }
-            return event
-        })
-        completion(events)
     }
     
 }
@@ -330,7 +251,11 @@ extension KVKCalendarSettings where Self: KVKCalendarDataModel {
 extension KVKCalendarSettings {
     
     var defaultStringDate: String {
-        "14.11.2022"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        let currentDate = Date()
+        let formattedDate = dateFormatter.string(from: currentDate)
+        return formattedDate
     }
     
     var defaultDate: Date {
