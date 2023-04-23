@@ -21,7 +21,6 @@ let headers = [
   "content-type": "application/json",
   "authorization": "Bearer m41doASsy8NROlwnw6TXLIhH0dhXV8XQEaYvYKvk"
 ]
-
 public var courseDict = [String : Course]()
 
 class SignUpViewController: UIViewController {
@@ -36,8 +35,13 @@ class SignUpViewController: UIViewController {
         theContainer.addSubview(childView.view)
         // Do any additional setup after loading the view.
     }
+    
+    
         
-        override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
+        
+        
+        DispatchQueue.global().async {
             let urls = ["https://api.ucsb.edu/academics/curriculums/v3/classes/search?quarter=20232&pageNumber=1&pageSize=500&includeClassSections=true", "https://api.ucsb.edu/academics/curriculums/v3/classes/search?quarter=20232&pageNumber=2&pageSize=500&includeClassSections=true","https://api.ucsb.edu/academics/curriculums/v3/classes/search?quarter=20232&pageNumber=3&pageSize=500&includeClassSections=true", "https://api.ucsb.edu/academics/curriculums/v3/classes/search?quarter=20232&pageNumber=4&pageSize=500&includeClassSections=true", "https://api.ucsb.edu/academics/curriculums/v3/classes/search?quarter=20232&pageNumber=5&pageSize=500&includeClassSections=true"]
             for url in urls {
                 let url = URL(string: url)!
@@ -131,6 +135,7 @@ class SignUpViewController: UIViewController {
                 print(title)
             }
         }
+    }
 
     /*
     // MARK: - Navigation
