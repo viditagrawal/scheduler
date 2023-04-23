@@ -22,6 +22,7 @@ struct SignUpSwiftUIView: View {
     
     var body: some View {
         Home()
+        let image = UIImage(named: "minz")
     }
 
     struct ContentView_Previews: PreviewProvider {
