@@ -34,6 +34,8 @@ struct CalendarView: View {
             orientation = newOrientation
         })
         .onAppear {
+            //sleep(5)
+            myUID = uid
             viewModel.loadEvents { (items) in
                 print("Items: ", items)
                 print("updatedEvents: ", updatedEvents)

@@ -7,10 +7,12 @@
 
 import UIKit
 import SwiftUI
+import FirebaseAuth
+
+public var myUID = ""
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var theContainer : UIView!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,11 @@ class HomeViewController: UIViewController {
             // Create the tab view
             let tabView = UITabBarController()
             tabView.viewControllers = [scheduleView, courseRecView, friendsView, friendRecView]
+        
+            if let curruser = Auth.auth().currentUser {
+                let uid = curruser.uid
+                myUID  = uid
+            }
             
             // Set the tab view as the root view controller
             UIApplication.shared.windows.first?.rootViewController = tabView

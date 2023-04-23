@@ -89,14 +89,21 @@ extension KVKCalendarSettings where Self: KVKCalendarDataModel {
     
     
     
-    func loadEvents(uid: String, dateFormat: String, completion: ([Event]) -> Void) {
+    func loadEvents(dateFormat: String, completion: ([Event]) -> Void) {
         let decoder = JSONDecoder()
         var courses : Set<String> = []
         if let curruser = Auth.auth().currentUser {
+            
             let uid = curruser.uid
             //let uid = "PeT7yg3UqCRbf3CkjoAJoFv0l8z2"
+            print(myUID)
+            print(uid)
+            if (myUID == "") {
+                myUID = uid
+            }
+            
             let db = Firestore.firestore()
-            let currData = db.collection("data").document(uid)
+            let currData = db.collection("data").document(myUID)
             
             //print("currData: \(currData)")
             
@@ -107,7 +114,7 @@ extension KVKCalendarSettings where Self: KVKCalendarDataModel {
                     let data = document.data()
                     //print("Data: \(data)")
                     if let currcourses = data?["courses"] as? [String]{
-                        //print("courses: \(currcourses)")
+                        print("courses: \(currcourses)")
                         for i in currcourses{
                             courses.insert(i)
                             //print(i)
@@ -119,6 +126,8 @@ extension KVKCalendarSettings where Self: KVKCalendarDataModel {
                             
                             let timeString = courseDict[i]?.beginTime
                             let daysString = courseDict[i]?.days
+                            
+                            if (timeString == nil) {continue}
                             
                             print(i)
                             print(timeString)

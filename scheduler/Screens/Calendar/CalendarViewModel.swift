@@ -20,7 +20,7 @@ final class CalendarViewModel: ObservableObject, KVKCalendarSettings, KVKCalenda
     
     func loadEvents(completion: @escaping ([Event]) -> Void) {
         DispatchQueue.main.asyncAfter(wallDeadline: .now() + 3) {
-            self.loadEvents(uid: "", dateFormat: self.style.timeSystem.format, completion: completion)
+            self.loadEvents(dateFormat: self.style.timeSystem.format, completion: completion)
         }
     }
     
