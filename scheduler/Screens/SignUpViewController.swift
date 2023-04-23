@@ -130,10 +130,7 @@ class SignUpViewController: UIViewController {
                 task.resume()
             }
             sleep(3)
-            print("Count: \(courseDict.count)")
-            for (title, course) in courseDict{
-                print(title)
-            }
+
         }
     }
 

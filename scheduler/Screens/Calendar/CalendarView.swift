@@ -32,9 +32,8 @@ struct CalendarView: View {
         })
         .onAppear {
             viewModel.loadEvents { (items) in
-                print("Items: ", items)
                 sleep(10)
-                print("updatedEvents: ", updatedEvents)
+
                 events = items
             }
         }

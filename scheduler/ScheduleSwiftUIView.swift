@@ -35,7 +35,6 @@ struct ScheduleSwiftUIView: View {
     var body: some View {
         VStack {
             CalendarView()
-            
             Spacer()
             HStack {
                 Spacer()
@@ -43,26 +42,10 @@ struct ScheduleSwiftUIView: View {
                     presentAlert.toggle()
                 }
                 .alert("Enter your course ID", isPresented: $presentAlert) {
-                    NavigationStack {
-                        List {
-                            ForEach(searchResults, id: \.self) { name in
-                                NavigationLink {
-                                    Text(name)
-                                } label: {
-                                    Text(name)
-                                }
-                            }
-                        }
-                        .navigationTitle("Contacts")
-                    }
-                    .searchable(text: $courseID)
-                    
+                    TextField("Enter your course ID", text: $courseID)
+                        .foregroundColor(.black)
                     Button("OK", action: submit)
-                    
                 }
-//                List(filteredItems, id: \.self) { item in
-//                    Text(item)
-//                }
                 .padding()
                 .background(Color.blue)
                 .foregroundColor(.white)
@@ -87,7 +70,21 @@ func updateCourses(courseID: String, completion: @escaping (Error?) -> Void) {
         let uid = curruser.uid
         let db = Firestore.firestore()
         let currData = db.collection("data").document(uid)
-
+        db.collection("courses").document(courseID).getDocument { (document, error) in
+            if let document = document, document.exists {
+                var data = document.data()!
+                if var courses = data["courses"] as? [String] {
+                    courses.append(uid)
+                    data["courses"] = courses
+                    db.collection("courses").document(courseID).setData(data)
+                }
+            }
+            else {
+                let data: [String: Any] = ["courseID": courseID, "courses": [uid]]
+                db.collection("courses").document(courseID).setData(data)
+            }
+        }
+        
         currData.getDocument { (document, error) in
             if let error = error {
                 completion(error)
