@@ -3,7 +3,6 @@
    uuid = "A344D067-52EB-41DF-A169-0E10F44745EA"
    type = "1"
    version = "2.0">
-<<<<<<< Updated upstream
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
@@ -17,11 +16,9 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "283"
             endingLineNumber = "283"
-            landmarkName = "loadEvents(dateFormat:completion:)"
+            landmarkName = "handleOptionMenu(type:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
-=======
->>>>>>> Stashed changes
 </Bucket>

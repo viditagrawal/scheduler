@@ -77,7 +77,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b6u-ER-pML" customClass="CalendarView" customModule="KVKCalendar">
+<<<<<<< Updated upstream
                                 <rect key="frame" x="8" y="50" width="377" height="802"/>
+=======
+                                <rect key="frame" x="8" y="-14" width="377" height="856"/>
+>>>>>>> Stashed changes
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
