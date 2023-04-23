@@ -20,10 +20,12 @@ class HomeViewController: UIViewController {
             courseRecView.tabBarItem = UITabBarItem(title: "Course Search", image: nil, selectedImage: nil)
             let friendsView = UINavigationController(rootViewController: UIHostingController(rootView: FriendsSwiftUIView()))
             friendsView.tabBarItem = UITabBarItem(title: "Friends", image: nil, selectedImage: nil)
+            let friendRecView = UINavigationController(rootViewController: UIHostingController(rootView: FriendRecSwiftUIView()))
+            friendRecView.tabBarItem = UITabBarItem(title: "Friends Rec", image: nil, selectedImage: nil)
             
             // Create the tab view
             let tabView = UITabBarController()
-            tabView.viewControllers = [scheduleView, courseRecView, friendsView]
+            tabView.viewControllers = [scheduleView, courseRecView, friendsView, friendRecView]
             
             // Set the tab view as the root view controller
             UIApplication.shared.windows.first?.rootViewController = tabView
