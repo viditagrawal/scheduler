@@ -74,6 +74,25 @@ struct CalendarView: View {
                 }
                 
             }
+            
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    if let event = viewModel.addNewEvent() {
+                        events.append(event)
+                        
+                        viewModel.loadEvents { (items) in
+                            print("Items: ", items)
+                            print("updatedEvents: ", updatedEvents)
+                            events = updatedEvents
+                        }
+                        
+                    }
+                } label: {
+                    Image(systemName: "plus")
+                        .foregroundColor(.blue)
+                }
+                
+            }
         }
     }
     
