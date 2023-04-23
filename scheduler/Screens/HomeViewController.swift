@@ -31,6 +31,51 @@ class HomeViewController: UIViewController {
                 
     }
     
+    func fetchFriends() {
+        let url = URL(string: "http://127.0.0.1:5000/friends")!
+        let parameters = [
+            "first": [
+                "uuid": "2E1qWbu3lIbik8WHCxhKrfXvIbk2",
+                "courses": [["CMPSC16"]]
+            ],
+            "second": [
+                "5lwGD2WxVBUx4vRJxSO13almscE3": [["CMPSC32", "CMPSC64"]],
+                "9tSkoSsBX1Vov0QoHOGxWbvvzAB2": [["PHYS2"]]
+            ]
+        ]
+        let session = URLSession.shared
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else {
+            return
+        }
+        request.httpBody = httpBody
+        let task = session.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print("Error fetching friends: \(error.localizedDescription)")
+                return
+            }
+            guard let data = data else {
+                print("No data returned from friends endpoint")
+                return
+            }
+            do {
+                if let jsonArray = try JSONSerialization.jsonObject(with: data, options: []) as? [[String:Any]] {
+                    for item in jsonArray {
+                        if let similarity = item["similarity"] as? Double, let friendUUID = item["friend_uuid"] as? String {
+                            // Add the friend UUID and similarity to a list to display in your app
+                            print("Friend UUID: \(friendUUID), Similarity: \(similarity)")
+                        }
+                    }
+                }
+            } catch {
+                print("Error parsing JSON: \(error.localizedDescription)")
+                return
+            }
+        }
+        task.resume()
+    }
 
     /*
     // MARK: - Navigation
