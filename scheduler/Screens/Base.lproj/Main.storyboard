@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wdk-Js-2jT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wdk-Js-2jT">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,10 +18,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hwu-l9-0Pt">
-                                <rect key="frame" x="0.0" y="59" width="377" height="768"/>
+                                <rect key="frame" x="0.0" y="122" width="377" height="705"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p48-Ch-olV">
+                                <rect key="frame" x="159" y="59" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <segue destination="yQf-gt-JGY" kind="show" id="uYR-Yh-SBn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="caN-zf-K90"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -32,7 +41,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gb-N7-0Aa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-387" y="-704"/>
+            <point key="canvasLocation" x="-387.02290076335879" y="-704.22535211267609"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="cDK-zf-eif">
@@ -64,11 +73,11 @@
             <objects>
                 <viewController storyboardIdentifier="HomeVC" id="yQf-gt-JGY" customClass="HomeViewController" customModule="scheduler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="REt-WQ-HMp">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b6u-ER-pML">
-                                <rect key="frame" x="0.0" y="59" width="377" height="818"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b6u-ER-pML" customClass="CalendarView" customModule="KVKCalendar">
+                                <rect key="frame" x="8" y="50" width="377" height="802"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -76,6 +85,7 @@
                         <viewLayoutGuide key="safeArea" id="Fki-ky-aU9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="EgJ-G0-h62"/>
                     <connections>
                         <outlet property="theContainer" destination="b6u-ER-pML" id="MDD-T6-xuv"/>
                     </connections>
@@ -83,41 +93,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oig-Nx-O55" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1307.6335877862596" y="-717.6056338028169"/>
-        </scene>
-        <!--Calendar View Controller-->
-        <scene sceneID="nzd-2y-vi3">
-            <objects>
-                <viewController id="LDB-Oa-zJU" userLabel="Calendar View Controller" customClass="CalendarViewController" customModule="scheduler" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qm6-S0-Jgd">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y9N-R5-pnR" customClass="ECWeekView" customModule="ECWeekView">
-                                <rect key="frame" x="16" y="44" width="361" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="visibleDays">
-                                        <integer key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="rva-Jq-A9h"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="y9N-R5-pnR" firstAttribute="top" secondItem="qm6-S0-Jgd" secondAttribute="topMargin" constant="-15" id="RfS-mL-66m"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="y9N-R5-pnR" secondAttribute="bottom" constant="-44" id="Ttj-LA-4ZJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="y9N-R5-pnR" secondAttribute="trailing" id="xSE-6h-DpE"/>
-                            <constraint firstItem="y9N-R5-pnR" firstAttribute="leading" secondItem="qm6-S0-Jgd" secondAttribute="leadingMargin" id="yHD-zA-YlU"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="weekView" destination="y9N-R5-pnR" id="72l-Qm-ADx"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rfG-r5-M8n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2250" y="-704"/>
         </scene>
     </scenes>
     <resources>

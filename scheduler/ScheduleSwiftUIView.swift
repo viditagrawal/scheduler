@@ -13,8 +13,28 @@ struct ScheduleSwiftUIView: View {
     @State private var newCourse = ""
     @State private var presentAlert = false
     @State private var courseID = ""
+    let allCourses = courseDict.keys
+    
+    
+    var filteredItems: [String]{
+        if courseID.isEmpty{
+            return Array(allCourses)
+        }
+        else
+        {
+            return allCourses.filter { $0.lowercased().hasPrefix(courseID.lowercased()) }
+        }
+    }
+    var searchResults: [String] {
+        if courseID.isEmpty {
+            return Array(allCourses)
+        } else {
+            return allCourses.filter { String($0).lowercased().contains(courseID.lowercased()) }
+        }
+    }
     var body: some View {
         VStack {
+            CalendarView()
             Spacer()
             HStack {
                 Spacer()
@@ -22,10 +42,26 @@ struct ScheduleSwiftUIView: View {
                     presentAlert.toggle()
                 }
                 .alert("Enter your course ID", isPresented: $presentAlert) {
-                    TextField("Enter your course ID", text: $courseID)
-                        .foregroundColor(.black)
+                    NavigationStack {
+                        List {
+                            ForEach(searchResults, id: \.self) { name in
+                                NavigationLink {
+                                    Text(name)
+                                } label: {
+                                    Text(name)
+                                }
+                            }
+                        }
+                        .navigationTitle("Contacts")
+                    }
+                    .searchable(text: $courseID)
+                    
                     Button("OK", action: submit)
+                    
                 }
+//                List(filteredItems, id: \.self) { item in
+//                    Text(item)
+//                }
                 .padding()
                 .background(Color.blue)
                 .foregroundColor(.white)

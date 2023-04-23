@@ -21,6 +21,7 @@ let headers = [
   "content-type": "application/json",
   "authorization": "Bearer m41doASsy8NROlwnw6TXLIhH0dhXV8XQEaYvYKvk"
 ]
+public var courseDict = [String : Course]()
 
 class SignUpViewController: UIViewController {
     @IBOutlet weak var theContainer : UIView!
@@ -35,9 +36,12 @@ class SignUpViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    var courseDict = [String : Course]()
+    
         
-        override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
+        
+        
+        DispatchQueue.global().async {
             let urls = ["https://api.ucsb.edu/academics/curriculums/v3/classes/search?quarter=20232&pageNumber=1&pageSize=500&includeClassSections=true", "https://api.ucsb.edu/academics/curriculums/v3/classes/search?quarter=20232&pageNumber=2&pageSize=500&includeClassSections=true","https://api.ucsb.edu/academics/curriculums/v3/classes/search?quarter=20232&pageNumber=3&pageSize=500&includeClassSections=true", "https://api.ucsb.edu/academics/curriculums/v3/classes/search?quarter=20232&pageNumber=4&pageSize=500&includeClassSections=true", "https://api.ucsb.edu/academics/curriculums/v3/classes/search?quarter=20232&pageNumber=5&pageSize=500&includeClassSections=true"]
             for url in urls {
                 let url = URL(string: url)!
@@ -75,7 +79,7 @@ class SignUpViewController: UIViewController {
                                     //print("Title: \(title)")
                                     //print("Description: \(description)")
                                     
-                                    var temp = Course(title: title, description: description, instructor: "", beginTime: "", endTime: "", unitsFixed: units, courseID: courseId.replacingOccurrences(of: " ", with: ""), enrollCode: "", embedding: [])
+                                    var temp = Course(title: title, description: description, instructor: "", beginTime: "", endTime: "", days: "", unitsFixed: units, courseID: courseId.replacingOccurrences(of: " ", with: ""), enrollCode: "", embedding: [])
                                     
                                     
                                     if let classSections = classDict["classSections"] as? [[String: Any]] {
@@ -97,14 +101,16 @@ class SignUpViewController: UIViewController {
                                                 
                                                 for time in times{
                                                     if let begin = time["beginTime"] as? String,
-                                                       let end = time["endTime"] as? String{
+                                                       let end = time["endTime"] as? String,
+                                                        let days = time["days"] as? String{
                                                         //print("Times: \(begin) to \(end)")
                                                         temp.beginTime = begin
                                                         temp.endTime = end
+                                                        temp.days = days
                                                     }
                                                 }
                                                 
-                                                self.courseDict[temp.courseID] = temp
+                                                courseDict[temp.courseID] = temp
                                                 
                                                 
                                                 
@@ -124,11 +130,12 @@ class SignUpViewController: UIViewController {
                 task.resume()
             }
             sleep(3)
-            print("Count: \(self.courseDict.count)")
-            for (title, course) in self.courseDict{
+            print("Count: \(courseDict.count)")
+            for (title, course) in courseDict{
                 print(title)
             }
         }
+    }
 
     /*
     // MARK: - Navigation
