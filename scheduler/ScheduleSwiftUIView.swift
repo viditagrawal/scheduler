@@ -34,10 +34,11 @@ struct ScheduleSwiftUIView: View {
     }
     var body: some View {
         VStack {
+            Image("minzLogo").frame(width: 100, height: 52.3, alignment: .top).aspectRatio(contentMode: .fit).padding(.top, 45)
+            
             if let curruser = Auth.auth().currentUser {
                 let myUid = curruser.uid
                 CalendarView(uid: myUid)
-                
             }
             
             Spacer()
@@ -52,14 +53,14 @@ struct ScheduleSwiftUIView: View {
                     Button("OK", action: submit)
                 }
                 .padding()
-                .background(Color.blue)
+                .background(Color.green)
                 .foregroundColor(.white)
                 .cornerRadius(5)
                 .alignmentGuide(.bottom) { d in d[.bottom] }
-                .alignmentGuide(.trailing) { d in d[.trailing] }
             }
-            .padding(.bottom, 80)
-            .padding(.trailing, 30)
+            .padding(.bottom, 100)
+            .padding(.trailing, 130)
+            .padding(.leading, 130)
         }
         .edgesIgnoringSafeArea(.all)
     }
