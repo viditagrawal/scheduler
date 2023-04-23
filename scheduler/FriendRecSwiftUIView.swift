@@ -40,6 +40,7 @@ struct FriendRecSwiftUIView: View {
         }
     }
 }
+
 public var enrollmentCodes: [String] = []
     func getCourses(uuid: String, completion: @escaping ([String]) -> Void) {
                 let db = Firestore.firestore()
@@ -92,82 +93,7 @@ public var enrollmentCodes: [String] = []
         }
     }
     func hitEndpoint(completion: @escaping ([Friend]) -> Void) {
-        let url = URL(string: "http://127.0.0.1:5000/friends")!
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let user = Auth.auth().currentUser
-        
-       
-        var friends: [String : [String]] = [:]
-
-        let group = DispatchGroup()
-
-        
-        getAllPeopleInCourses(uuid: user!.uid) { people in
-            print("All people: \(people)")
-            var secondDict = [String: [String]]()
-            
-            let group = DispatchGroup()
-            
-            
-            Text("hello")
-            }
-        }
-    }
-}
-public var enrollmentCodes: [String] = []
-    func getCourses(uuid: String, completion: @escaping ([String]) -> Void) {
-                let db = Firestore.firestore()
-                let docRef = db.collection("data").document(uuid)
-                print("docref \(docRef)")
-                docRef.getDocument { (document, error) in
-                    if let document = document, document.exists {
-                        let data = document.data()
-                        let courses = data?["courses"] as? [String] ?? []
-                        print(courses)
-                        completion(courses)
-                    } else {
-                        print("Document does not exist")
-                        completion([])
-                    }
-                }
-            }
-    func getPeopleInCourses(courseID: String, completion: @escaping ([String]) -> Void) {
-        let db = Firestore.firestore()
-        let docRef = db.collection("courses").document(courseID)
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let data = document.data()
-                let people = data?["courses"] as? [String] ?? []
-                print("people \(people)")
-                completion(people)
-            } else {
-                print("Document does not exist")
-                completion([])
-            }
-        }
-    }
-    func getAllPeopleInCourses(uuid: String, completion: @escaping ([String]) -> Void) {
-        var allPeople = [String]()
-        let group = DispatchGroup()
-        
-        getCourses(uuid: uuid) { (courses) in
-            for course in courses {
-                enrollmentCodes.append(courseDict[course]!.enrollCode)
-                group.enter()
-                getPeopleInCourses(courseID: course) { (people) in
-                    allPeople.append(contentsOf: people)
-                    group.leave()
-                }
-            }
-            
-            group.notify(queue: .main) {
-                completion(allPeople)
-            }
-        }
-    }
-    func hitEndpoint(completion: @escaping ([Friend]) -> Void) {
-        let url = URL(string: "http://127.0.0.1:5000/friends")!
+        let url = URL(string: "http://149.142.229.196:5000/friends")!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         let user = Auth.auth().currentUser
